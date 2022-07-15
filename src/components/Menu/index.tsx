@@ -6,7 +6,7 @@ import config from "./config";
 import { t } from "i18next";
 
 const noop = () => {};
-const Menu = (props: JSX.IntrinsicAttributes) => {
+const Menu = (props: JSX.IntrinsicAttributes | any) => {
   console.log(config(t));
 
   return (
@@ -17,13 +17,13 @@ const Menu = (props: JSX.IntrinsicAttributes) => {
       setLang={noop}
       currentLang="EN"
       links={config(t)}
-      login={function (connectorId: ConnectorNames): void {
-        throw new Error("Function not implemented.");
-      }}
-      logout={function (): void {
-        throw new Error("Function not implemented.");
-      }}
-    />
+      subLinks={[]}
+      footerLinks={[]}
+      activeItem={""}
+      activeSubItem={""}
+      buyCakeLabel={""}
+      {...props}
+    ></UikitMenu>
   );
 };
 

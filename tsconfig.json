@@ -21,10 +21,10 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths":{
-      "components/*":["src/components/*"],
-      "view/*":["src/view*"],
-      "contexts/*":["src/contexts*"],
-      "utils/*":["src/utils*"]
+      "@components/*":["/src/components/*"],
+      "view/*":["/src/view*"],
+      "contexts/*":["/src/contexts*"],
+      "utils/*":["/src/utils*"]
     }
   },
   "include": [
