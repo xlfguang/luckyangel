@@ -7,16 +7,6 @@ const config: (t: any) => MenuItemsType[] = (t) => [
     href: "/",
   },
   {
-    label: t("Exchange"),
-    icon: "trade",
-    href: `/swap`,
-  },
-  {
-    label: t("Liquidity"),
-    icon: "liquidity",
-    href: "/liquidity",
-  },
-  {
     label: t("Dashboard"),
     icon: "dashboard",
     href: "/dashboard",

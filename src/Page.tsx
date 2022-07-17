@@ -11,7 +11,7 @@ const StyledPage = styled.div`
   padding: 16px;
   padding-bottom: 0;
   min-height: calc(100vh - 64px);
-  background-color: #b6e2da;
+  background-color: #ecfdff;
   color:#585858
 
   ${({ theme }) => theme.mediaQueries.sm} {

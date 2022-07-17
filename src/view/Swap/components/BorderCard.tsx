@@ -3,7 +3,7 @@ import { Box } from "@pancakeswap/uikit";
 
 export const BorderBox = styled(Box)<{ borderColor?: string,margin?:string,bc?:string }>`
   width: 100%;
-  border-width: 1px;
+  border-width: 2px;
   border-style: solid;
   padding: 20px;
   border-radius: 20px;
