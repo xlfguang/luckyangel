@@ -5,7 +5,6 @@ import {
   Flex,
   VerifiedIcon,
   Text,
-
 } from "@pancakeswap/uikit";
 import { useTranslation } from "react-i18next";
 import { AutoFlex } from "src/components/AutoFlex/AutoFlex";
@@ -22,6 +21,9 @@ import { IconText } from "./components/IconText";
 import { Title } from "./components/Title";
 import icon1 from "../../images/icon15.png";
 import icon2 from "../../images/icon16.png";
+import styled from "styled-components";
+import { AccountCard } from "src/components/GridContainer";
+import { QADataRow } from "./components/QADataRow";
 
 export default function Swap() {
   const { t } = useTranslation();
@@ -41,8 +43,14 @@ export default function Swap() {
               {t("Charity Lottery Pledge and Dividend Agreement")}
             </p>
             <br></br>
-            <IconText>{t("Automatically distribute USDT in your wallet")}</IconText>
-            <IconText>{t("5% of each transaction goes into the prize pool automatically")}</IconText>
+            <IconText>
+              {t("Automatically distribute USDT in your wallet")}
+            </IconText>
+            <IconText>
+              {t(
+                "5% of each transaction goes into the prize pool automatically"
+              )}
+            </IconText>
             <IconText>
               {t("1% of each transaction goes into the Marketing Fund")}
             </IconText>
@@ -53,9 +61,15 @@ export default function Swap() {
               {t("2% of each transaction goes into the dividend fund")}
             </IconText>
             <IconText>
-              {t("The original Lucky Angel partner permanent lottery NFT dividend system")}
+              {t(
+                "The original Lucky Angel partner permanent lottery NFT dividend system"
+              )}
             </IconText>
-            <IconText>{t("EGG Collaboration Medal NFT Bonus System")}</IconText>
+            <IconText>
+              {t(
+                "Reward users with a sustainable lottery model and dividends to make holders more determined to hold"
+              )}
+            </IconText>
             <IconText>{t("Click Here to Buy Lucky Angel")}</IconText>
             <br />
             <Flex>
@@ -84,14 +98,14 @@ export default function Swap() {
                 "The original Lucky Angel partner permanent lottery NFT dividend system"
               )}
             </p>
-            
           </Flex>
         </BorderBox>
       </AutoFlex>
       <div style={{ width: "80%", marginBottom: "50px" }}>
         <MainBackgroundCard>
           <MainBackground>
-            {t("Lucky Angel Contract")}0x6A4fcA7762C961F877Edbb486Dfbdb08483BEa0f
+            {t("Lucky Angel Contract")}
+            0x6A4fcA7762C961F877Edbb486Dfbdb08483BEa0f
           </MainBackground>
         </MainBackgroundCard>
       </div>
@@ -101,14 +115,14 @@ export default function Swap() {
         )}
       </Title>
 
-      <Title margin="40px 0">{t("How to participate in winning the prize?")}</Title>
+      <Title margin="40px 0">
+        {t("How to participate in winning the prize?")}
+      </Title>
       <AutoFlex justifyContent="center">
         <MainBackgroundCard>
           <MainBackground>
             <Box padding="50px" width="400px">
-              {t(
-                "Invest 100 $Lucky Angel"
-              )}
+              {t("Invest 100 $Lucky Angel")}
             </Box>
           </MainBackground>
         </MainBackgroundCard>
@@ -125,38 +139,53 @@ export default function Swap() {
       </AutoFlex>
       <Title margin="40px 0">{t("How It Works")}</Title>
 
-      <AutoFlex justifyContent="center" isWrap>
+      <AutoFlex justifyContent="center" isWrap alignItems="stretch" width="80%">
         <IconCard
-          imgUrl={"https://www.Lucky Angel.org/expansion/describe/img/icon1.png"}
-          title={"$Lucky Angel"}
+          imgUrl={"https://www.eggplus.org/expansion/describe/img/icon1.png"}
+          title={t("Dividends for holding coins")}
           text={t(
-            "$Lucky Angel is a native token that garners interest reward. Holders gain 0.021447% interest every 15 minutes automatically. Just hold $Lucky Angel in your wallet!"
+            "Lucky Angel is a native token for holding coins to obtain dividends. Each token holder automatically receives USDT dividends."
           )}
         />
         <IconCard
           imgUrl={"https://www.eggplus.org/expansion/describe/img/icon1.png"}
-          title={"$Lucky Angel"}
+          title={t("How to get the lottery")}
           text={t(
-            "$Lucky Angel is a native token that garners interest reward. Holders gain 0.021447% interest every 15 minutes automatically. Just hold $Lucky Angel in your wallet!"
+            "Hold 100 Lucky Angel tokens for pledge at any time from 20:40-21:00 on the day of each lottery draw to get 1 free lottery (the number can be superimposed, that is, 200 tokens can get 2 coupons, which will be invalid after the end of the lottery draw), and then Fill in the number, take back the pledge at 21:00 without damage, and wait for the draw."
           )}
         />
         <IconCard
           imgUrl={"https://www.eggplus.org/expansion/describe/img/icon1.png"}
-          title={"$Lucky Angel"}
+          title={t("Lottery Rules")}
           text={t(
-            "$Lucky Angel is a native token that garners interest reward. Holders gain 0.021447% interest every 15 minutes automatically. Just hold $Lucky Angel in your wallet!"
+            "The lottery draw is held every two days. The lottery time is fixed at 21:30. The winning numbers of each issue will be born from 1000 numbers from 1 to 1000. Each lottery ticket can be filled in the number freely. The lottery number and the lottery number are the same as the winning number."
           )}
         />
         <IconCard
           imgUrl={"https://www.eggplus.org/expansion/describe/img/icon1.png"}
-          title={"$Lucky Angel"}
+          title={t("Lottery winning amount")}
           text={t(
-            "$Lucky Angel is a native token that garners interest reward. Holders gain 0.021447% interest every 15 minutes automatically. Just hold $Lucky Angel in your wallet!"
+            "The total amount of each draw is 50% of the bonus fund. The first prize gets 50% of the total draw amount, the second prize gets 30%, and the third prize gets 20%. If multiple people win the lottery, the winning amount will be divided equally. The winnings will be accumulated to the next period, and the initial bonus of the bonus fund pool is 30,000 USDT."
           )}
         />
+        <IconCard
+          imgUrl={"https://www.eggplus.org/expansion/describe/img/icon1.png"}
+          title={t("NFT cooperation lottery")}
+          text={t(
+            "The total circulation of NFT cooperation lottery is 450, and each NFT cooperation lottery will be obtained without pledge to obtain each lottery. If the NFT cooperation lottery is transferred, its rights will also be transferred."
+          )}
+        />
+        <IconCard
+          imgUrl={"https://www.eggplus.org/expansion/describe/img/icon1.png"}
+          title={t("Charity Vote")}
+          text={t(
+            "The corresponding voting weight is obtained according to the amount of currency held, and each charitable event is selected by voting."
+          )}
+        />
+        <div style={{ width: "300px", margin: "10px" }}></div>
+        <div style={{ width: "300px", margin: "10px" }}></div>
       </AutoFlex>
-      <Title margin="40px 0">{t("Lucky Angel Insurance Fund (EIF)")}</Title>
-      <Box width="80%">
+      {/* <Box width="80%">
         <Box background="#439ca5" borderRadius="20px" margin="20px 0">
           <FlipCard
             cardTitle={t("How It Works")}
@@ -263,7 +292,7 @@ export default function Swap() {
             </Flex>
           </FlipCard>
         </Box>
-      </Box>
+      </Box> */}
       <Title margin="40px 0">{t("Tokenomics")}</Title>
       <Flex width="80%" justifyContent="space-evenly">
         <Box>
@@ -271,17 +300,43 @@ export default function Swap() {
           <Text color="#552020" fontSize="30px">
             {t("Buy")}
           </Text>
-          <Text>15%{t("Slippage")}</Text>
+          <Text>10%{t("Slippage")}</Text>
         </Box>
         <Box>
           <img style={{ width: "70px", height: "70px" }} src={icon2} alt="" />
           <Text color="#552020" fontSize="30px">
             {t("Sell")}
           </Text>
-          <Text>15%{t("Slippage")}</Text>
+          <Text>10%{t("Slippage")}</Text>
         </Box>
       </Flex>
-     
+      <Title margin="20px 0">
+        {t("Automatically distribute USDT for holding coins")}
+      </Title>
+      <Title margin="20px 0">{t("5% prize pool")}</Title>
+      <Title margin="20px 0">{t("1% Marketing Fund")}</Title>
+      <Title margin="20px 0">{t("2% charitable fund")}</Title>
+      <Title margin="20px 0">{t("2% dividend fund")}</Title>
+      <Title margin="40px 0">{t("FAQ's")}</Title>
+
+      <Flex flexDirection="column" alignItems="flex-start" width="80%" background='#daf7ffc4' padding='20px' borderRadius='20px'>
+        <QADataRow Q={t("Who is the Lucky Angel team?")} A={t("The Lucky Angel team is composed of well-known domestic community-based charitable organizations, development, marketing and customer support teams. We have a lot of resources in this market, which allows us to easily reach influencers and gain an edge over our competitors.")} />
+        <QADataRow Q={t("Has the team done a contract audit?")} A={t("Yes, the team has obtained InterFi Network's contract audit, adding a layer of trust and protection for our investors")} />
+        <QADataRow Q={t("What are Lucky Ange Tokens?")} A={t("Lucky Ange is a decentralized financial asset that rewards users with a sustainable dividend lottery model by using its unique innovative mechanism. It makes staking easier and more efficient, and provides the highest cryptocurrency stability returns for Lucky Ange token holders")} />
+        <QADataRow Q={t("What makes Lucky Ange different from other DeFi projects?")} A={t("Lucky Ange, a new protocol designed to create a new decentralized model in the DeFi space. Holders will receive USDT income dividends, and can get free lottery draws to earn huge bonuses, this method provides immediate value to token holders, while also cultivating an interest in seeing the project flourish. Get involved in the community. Our goal is to use the community as a cohesive and focused unit to create wealth and strength for the community. This new concept in DeFi, we believe it will set a new industry standard. Lucky Ange is currently one of the hottest projects in the DeFi space.")} />
+        <QADataRow Q={t("Where to buy $Lucky Ange tokens?")} A={t("Buy with Pancakeswap")} />
+        <QADataRow Q={t("How to buy $Lucky Ange tokens?")} A={`
+        ${t("1. Go to the Pancakeswap Binance Smart Chain network.")}
+        ${t("2. Connect any compatible wallet (usually metamask / coinbase dex wallet / TP wallet/trustwallet).")}
+        ${t("3. In the top box, select the token you want to exchange with $Lucky Ange (usually BNB or USDT)")}
+        ${t("4. In the bottom box, paste the $Lucky Ange contract address.")}
+        ${t("5. Select the amount of $ Lucky Ange you want to buy, make sure you have enough BNB in your wallet to cover the GAS fee for the transaction.")}
+        ${t("6. Click the settings icon and set the slippage to 11%-15%.")}
+        ${t("7. When you are ready to confirm the transaction, tap Swap, then Confirm Swap. This will show the transaction to be confirmed in your wallet. Make sure you are willing and able to pay the quoted gas fee, then confirm the transaction in your wallet.")}
+        `} />
+        
+        <QADataRow Q={t("What should I do after buying $Lucky Ange tokens?")} A={t("Start earning USDT dividends simply by holding $ Lucky Ange tokens in your wallet. These rewards are distributed to your wallet in the form of $USDT tokens, allowing you to easily start earning. And get a lottery ticket.")} />
+      </Flex>
     </Page>
   );
 }
