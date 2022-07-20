@@ -59,7 +59,7 @@ export default function Medal() {
 
       <Box width="70%" mt="40px">
         <Text mb="20px" textAlign="left" bold fontSize="30px">
-          {t("Dividends you can receive:")} {0} {t("EGGPLUS")}
+          {t("Dividends you can receive:")} {0} {t("Lucky Angel")}
         </Text>
         <Text textAlign="left" bold fontSize="30px" color="#000">
           {t("My Medal")}: 

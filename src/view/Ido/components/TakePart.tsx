@@ -219,8 +219,8 @@ const TakePart = () => {
                   <div className="step-text"> {t('You can exchange other currencies into USDT on centralized or decentralized exchanges.')} </div>
                 </PartStep>
                 <PartStep bgType={1}>
-                  <div className="step-title">{t('Claim EGGPLUS')}</div>
-                  <div className="step-text"> {t('After IDO, you can claim and transfer $EGGPLUS to your wallet.')} </div>
+                  <div className="step-title">{t('Claim Lucky Angel')}</div>
+                  <div className="step-text"> {t('After IDO, you can claim and transfer $Lucky Angel to your wallet.')} </div>
                 </PartStep>
               </Flex>
             </Flex>
@@ -257,8 +257,8 @@ const TakePart = () => {
                   <div className="step-text"> {t('Max limit for Ordinary User is USDT100 and Collab User is USDT200')} </div>
                 </PartStep>
                 <PartStep bgType={1} mt={10}>
-                  <div className="step-title">{t('Claim EGGPLUS')}</div>
-                  <div className="step-text"> {t('After IDO, you can claim and transfer $EGGPLUS to your wallet.')} </div>
+                  <div className="step-title">{t('Claim Lucky Angel')}</div>
+                  <div className="step-text"> {t('After IDO, you can claim and transfer $Lucky Angel to your wallet.')} </div>
                 </PartStep>
               </Flex>
             </PartBox>

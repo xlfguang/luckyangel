@@ -27,7 +27,7 @@ export default function Swap() {
   const { t } = useTranslation();
   return (
     <Page>
-      <Title>{t("EggPlus Auto-Staking Protocol")}</Title>
+      <Title>{t("Lucky Angel Auto-Staking Protocol")}</Title>
 
       <AutoFlex
         maxWidth="1200PX"
@@ -38,29 +38,29 @@ export default function Swap() {
         <BorderBox margin="0 20px 0 0">
           <Flex flexDirection={"column"} alignItems={"flex-start"}>
             <p style={{ fontSize: "32px", color: "#585858" }}>
-              {t("High Paying Auto-Staking Auto-Compounding Protocol")}
+              {t("Charity Lottery Pledge and Dividend Agreement")}
             </p>
             <br></br>
-            <IconText>{t("Cryptocurrency With Max APY - 183,294%")}</IconText>
-            <IconText>{t("No Risk - No Investment")}</IconText>
+            <IconText>{t("Automatically distribute USDT in your wallet")}</IconText>
+            <IconText>{t("5% of each transaction goes into the prize pool automatically")}</IconText>
             <IconText>
-              {t("Auto Staking & Compound Interest Every 15 Minutes")}
+              {t("1% of each transaction goes into the Marketing Fund")}
             </IconText>
             <IconText>
-              {t("5% of Purchased Transaction Enters Into LP")}
+              {t("2% of each transaction goes to charitable funds")}
             </IconText>
             <IconText>
-              {t("2.5% of Sold Transaction Sends To Burned Address")}
+              {t("2% of each transaction goes into the dividend fund")}
             </IconText>
             <IconText>
-              {t("5% of Sold Transaction Enters Into Insurance Fund")}
+              {t("The original Lucky Angel partner permanent lottery NFT dividend system")}
             </IconText>
             <IconText>{t("EGG Collaboration Medal NFT Bonus System")}</IconText>
-            <IconText>{t("Click Here to Buy EGGPLUS")}</IconText>
+            <IconText>{t("Click Here to Buy Lucky Angel")}</IconText>
             <br />
             <Flex>
               <Button scale="sm" startIcon={<ArrowForwardIcon />} mr="20px">
-                {t("Click Here to Buy EGGPLUS")}
+                {t("Click Here to Buy Lucky Angel")}
               </Button>
               <Button color="#000" scale="sm" variant="success">
                 {t("Airdrop")}
@@ -81,43 +81,33 @@ export default function Swap() {
               }}
             >
               {t(
-                "A decentralized financial asset which rewards users with a sustainable fixed compound interest model"
+                "The original Lucky Angel partner permanent lottery NFT dividend system"
               )}
             </p>
-            <p
-              style={{
-                fontSize: "18px",
-                marginBottom: "5px",
-                color: "#00727a",
-              }}
-            >
-              {t(
-                "Delivering one of the top fixed APY in the industry, simply by buying and holding $EGGPLUS"
-              )}
-            </p>
+            
           </Flex>
         </BorderBox>
       </AutoFlex>
       <div style={{ width: "80%", marginBottom: "50px" }}>
         <MainBackgroundCard>
           <MainBackground>
-            {t("EGGPLUS Contract")}0x6A4fcA7762C961F877Edbb486Dfbdb08483BEa0f
+            {t("Lucky Angel Contract")}0x6A4fcA7762C961F877Edbb486Dfbdb08483BEa0f
           </MainBackground>
         </MainBackgroundCard>
       </div>
       <Title>
         {t(
-          "All EggPlus holders are rewarded with automatic compound interest which is paid everyday!"
+          "All Lucky Angel holders will receive automatic dividend rewards, free lottery coupons every two days, and select charitable activities based on the voting rights obtained by holding coins"
         )}
       </Title>
 
-      <Title margin="40px 0">{t("How much can I earn")}</Title>
+      <Title margin="40px 0">{t("How to participate in winning the prize?")}</Title>
       <AutoFlex justifyContent="center">
         <MainBackgroundCard>
           <MainBackground>
             <Box padding="50px" width="400px">
               {t(
-                "At the end of the year and with< $1,000 USD of  $EGGPLUS invested."
+                "Invest 100 $Lucky Angel"
               )}
             </Box>
           </MainBackground>
@@ -127,7 +117,7 @@ export default function Swap() {
           <MainBackground>
             <Box padding="50px" width="400px">
               {t(
-                "You can earn up to $1,832,940 USD of $EGGPLUS at 183,294% APY*."
+                "If you pledge before the lottery draw, you will get a free lottery ticket. After the pledge is over, the pledge will be retrieved without any damage, and you will be waiting for the draw."
               )}
             </Box>
           </MainBackground>
@@ -137,41 +127,41 @@ export default function Swap() {
 
       <AutoFlex justifyContent="center" isWrap>
         <IconCard
-          imgUrl={"https://www.eggplus.org/expansion/describe/img/icon1.png"}
-          title={"$EGGPLUS"}
+          imgUrl={"https://www.Lucky Angel.org/expansion/describe/img/icon1.png"}
+          title={"$Lucky Angel"}
           text={t(
-            "$EGGPLUS is a native token that garners interest reward. Holders gain 0.021447% interest every 15 minutes automatically. Just hold $EGGPLUS in your wallet!"
+            "$Lucky Angel is a native token that garners interest reward. Holders gain 0.021447% interest every 15 minutes automatically. Just hold $Lucky Angel in your wallet!"
           )}
         />
         <IconCard
           imgUrl={"https://www.eggplus.org/expansion/describe/img/icon1.png"}
-          title={"$EGGPLUS"}
+          title={"$Lucky Angel"}
           text={t(
-            "$EGGPLUS is a native token that garners interest reward. Holders gain 0.021447% interest every 15 minutes automatically. Just hold $EGGPLUS in your wallet!"
+            "$Lucky Angel is a native token that garners interest reward. Holders gain 0.021447% interest every 15 minutes automatically. Just hold $Lucky Angel in your wallet!"
           )}
         />
         <IconCard
           imgUrl={"https://www.eggplus.org/expansion/describe/img/icon1.png"}
-          title={"$EGGPLUS"}
+          title={"$Lucky Angel"}
           text={t(
-            "$EGGPLUS is a native token that garners interest reward. Holders gain 0.021447% interest every 15 minutes automatically. Just hold $EGGPLUS in your wallet!"
+            "$Lucky Angel is a native token that garners interest reward. Holders gain 0.021447% interest every 15 minutes automatically. Just hold $Lucky Angel in your wallet!"
           )}
         />
         <IconCard
           imgUrl={"https://www.eggplus.org/expansion/describe/img/icon1.png"}
-          title={"$EGGPLUS"}
+          title={"$Lucky Angel"}
           text={t(
-            "$EGGPLUS is a native token that garners interest reward. Holders gain 0.021447% interest every 15 minutes automatically. Just hold $EGGPLUS in your wallet!"
+            "$Lucky Angel is a native token that garners interest reward. Holders gain 0.021447% interest every 15 minutes automatically. Just hold $Lucky Angel in your wallet!"
           )}
         />
       </AutoFlex>
-      <Title margin="40px 0">{t("EggPlus Insurance Fund (EIF)")}</Title>
+      <Title margin="40px 0">{t("Lucky Angel Insurance Fund (EIF)")}</Title>
       <Box width="80%">
         <Box background="#439ca5" borderRadius="20px" margin="20px 0">
           <FlipCard
             cardTitle={t("How It Works")}
             cardText={t(
-              "5% of the selling fee will store in the EggPlus Insurance Fund, which will be used to invest in the most potential digital assets. 50% of the profits will go into the repurchase pool, of which 25% will be used to repurchase $EggPlus and increase liquidity. Through the insurance fund, we can better support up to 183,294% of our APY."
+              "5% of the selling fee will store in the Lucky Angel Insurance Fund, which will be used to invest in the most potential digital assets. 50% of the profits will go into the repurchase pool, of which 25% will be used to repurchase $Lucky Angel and increase liquidity. Through the insurance fund, we can better support up to 183,294% of our APY."
             )}
             boxTitle={t("Keeps holders safe by")}
             justifyContent="space-between"
@@ -207,7 +197,7 @@ export default function Swap() {
             isReverse
             cardTitle={t("How It Works")}
             cardText={t(
-              "5% of the selling fee will store in the EggPlus Insurance Fund, which will be used to invest in the most potential digital assets. 50% of the profits will go into the repurchase pool, of which 25% will be used to repurchase $EggPlus and increase liquidity. Through the insurance fund, we can better support up to 183,294% of our APY."
+              "5% of the selling fee will store in the Lucky Angel Insurance Fund, which will be used to invest in the most potential digital assets. 50% of the profits will go into the repurchase pool, of which 25% will be used to repurchase $Lucky Angel and increase liquidity. Through the insurance fund, we can better support up to 183,294% of our APY."
             )}
             boxTitle={t("Keeps holders safe by")}
             justifyContent="space-between"
@@ -242,7 +232,7 @@ export default function Swap() {
           <FlipCard
             cardTitle={t("How It Works")}
             cardText={t(
-              "5% of the selling fee will store in the EggPlus Insurance Fund, which will be used to invest in the most potential digital assets. 50% of the profits will go into the repurchase pool, of which 25% will be used to repurchase $EggPlus and increase liquidity. Through the insurance fund, we can better support up to 183,294% of our APY."
+              "5% of the selling fee will store in the Lucky Angel Insurance Fund, which will be used to invest in the most potential digital assets. 50% of the profits will go into the repurchase pool, of which 25% will be used to repurchase $Lucky Angel and increase liquidity. Through the insurance fund, we can better support up to 183,294% of our APY."
             )}
             boxTitle={t("Keeps holders safe by")}
             justifyContent="space-between"

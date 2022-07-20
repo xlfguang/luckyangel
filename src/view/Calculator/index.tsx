@@ -53,7 +53,7 @@ export default function Calculator() {
                   </GridItem>
                   <GridItem>
                     <CalculatorItemCard>
-                      <p className="title">{t("Your EGGPLUS Balance")}</p>
+                      <p className="title">{t("Your Lucky Angel Balance")}</p>
                       <p className="value">{0} EGG</p>
                     </CalculatorItemCard>
                   </GridItem>
@@ -66,7 +66,7 @@ export default function Calculator() {
                 <ContainerSpacing3>
                   <CalculatorInputWrapItem>
                     <InputWrap
-                      title={t("EGGPLUS Amount")}
+                      title={t("Lucky Angel Amount")}
                       text={t("Max")}
                       defaultVal="0"
                       readOnly={false}
@@ -82,7 +82,7 @@ export default function Calculator() {
                   </CalculatorInputWrapItem>
                   <CalculatorInputWrapItem>
                     <InputWrap
-                      title={t("EGGPLUS Price at purchase ($)")}
+                      title={t("Lucky Angel Price at purchase ($)")}
                       text={t("Current")}
                       defaultVal="0"
                       readOnly={false}
@@ -90,7 +90,7 @@ export default function Calculator() {
                   </CalculatorInputWrapItem>
                   <CalculatorInputWrapItem>
                     <InputWrap
-                      title={t("Future EGGPLUS market price ($)")}
+                      title={t("Future Lucky Angel market price ($)")}
                       text={t("Current")}
                       defaultVal="0"
                       readOnly={false}
@@ -130,7 +130,7 @@ export default function Calculator() {
                 <p className="value">${0}</p>
               </CalculatorUserDataRow>
               <CalculatorUserDataRow>
-                <p className="name">{t("EGGPLUS rewards estimation")}</p>
+                <p className="name">{t("Lucky Angel rewards estimation")}</p>
                 <p className="value">{0} EGG</p>
               </CalculatorUserDataRow>
               <CalculatorUserDataRow>

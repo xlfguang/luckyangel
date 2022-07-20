@@ -12,17 +12,17 @@ const config: (t: any) => MenuItemsType[] = (t) => [
     href: "/dashboard",
   },
   {
-    label: t("EAP-DAO Rewards"),
+    label: t("Lottery"),
     icon: "rewards",
     href: "/rewards",
   },
   {
-    label: t("Medal of EggPlus"),
+    label: t("Charity"),
     icon: "medal",
     href: "/medal",
   },
   {
-    label: t("Eggplus IDO"),
+    label: t("Lucky Angel IDO"),
     icon: "ido",
     href: "/ido",
   },

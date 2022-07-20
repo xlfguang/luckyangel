@@ -209,7 +209,7 @@ export default function Ido() {
                 />
               </div>
               <div className="image-title">
-                {t("Take Part In The EGGPLUS Sale!")}
+                {t("Take Part In The Lucky Angel Sale!")}
               </div>
             </IdoMe>
           </div>
@@ -224,7 +224,7 @@ export default function Ido() {
             </IdoEntryList>
             <IdoEntryList>
               <div className="title">{t("Total Amount")}</div>
-              <div className="content"> 1,000,000 EGGPLUS</div>
+              <div className="content"> 1,000,000 Lucky Angel</div>
             </IdoEntryList>
             <IdoEntryList>
               <div className="title">{t("Fund to Raise")}</div>
@@ -232,7 +232,7 @@ export default function Ido() {
             </IdoEntryList>
             <IdoEntryList>
               <div className="title">{t("Token Price")}</div>
-              <div className="content">50 EGGPLUS / 100 USDT </div>
+              <div className="content">50 Lucky Angel / 100 USDT </div>
             </IdoEntryList>
             <IdoEntryList>
               <div className="title">{t("Max Raise Per User")}</div>
@@ -292,7 +292,7 @@ export default function Ido() {
                   {t("Your USDT Balance")}: {0}
                 </IdoTitle>
                 <IdoTitle>
-                  {t("Your EGGPLUS Balance")}: {0}
+                  {t("Your Lucky Angel Balance")}: {0}
                 </IdoTitle>
               </div>
               <div className="box_fr">

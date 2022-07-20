@@ -70,13 +70,13 @@ export default function Rewards() {
         <Text textAlign="left">
           .
           {t(
-            "Attain the role of Collab Project and enjoy 10% EGGPLUS reward for more IDO referrals."
+            "Attain the role of Collab Project and enjoy 10% Lucky Angel reward for more IDO referrals."
           )}
         </Text>
         <Text textAlign="left">
           .
           {t(
-            "Invite at least 10 IDO participants, you have completed the task: 300USDT staked by you will be returned, also you are eligible for $EGGPLUS subscription allocation worth 200USDT. If the task is not done at the end of IDO, 300USDT will be put in good use for the community."
+            "Invite at least 10 IDO participants, you have completed the task: 300USDT staked by you will be returned, also you are eligible for $Lucky Angel subscription allocation worth 200USDT. If the task is not done at the end of IDO, 300USDT will be put in good use for the community."
           )}
         </Text>
         <Text textAlign="left">

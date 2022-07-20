@@ -68,11 +68,11 @@ export default function Dashboard() {
           <Text>$467,623</Text>
         </Box>
         <Box margin='10px 0' width="48%" background='linear-gradient(to right, #439ca5, #6fd5d0)' borderRadius='20px' padding='20px 0'>
-          <Text>{t("Medal of EggPlus NFT Dividend")}</Text>
+          <Text>{t("Medal of Lucky Angel NFT Dividend")}</Text>
           <Text>$467,623</Text>
         </Box>
         <Box margin='10px 0' width="48%" background='linear-gradient(to right, #439ca5, #6fd5d0)' borderRadius='20px' padding='20px 0'>
-          <Text>{t("EAP-DAO Rewards")}</Text>
+          <Text>{t("Lottery")}</Text>
           <Text>$467,623</Text>
         </Box>
         <Box margin='10px 0' width="48%" background='linear-gradient(to right, #439ca5, #6fd5d0)' borderRadius='20px' padding='20px 0'>
