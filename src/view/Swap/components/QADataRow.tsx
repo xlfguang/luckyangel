@@ -21,11 +21,12 @@ const QADataRowBox = styled(Box)`
     letter-spacing: 0.00938em;
     text-align: left;
     margin-bottom: 10px;
-   
+  }
+  & > p:hover {
+    color: rgb(212,35,122);
   }
 
   & > h5 {
-   
     color: #3e849dde;
     font-family: "Montserrat Medium";
     font-weight: bolder;
@@ -34,6 +35,8 @@ const QADataRowBox = styled(Box)`
     letter-spacing: 0em;
     margin-top: 10px;
     text-align: left;
+    overflow: hidden;
+    transition: all 0.3s;
   }
 `;
 
@@ -41,8 +44,8 @@ export const QADataRow = ({ Q, A }: { Q: string; A: string }) => {
   const [Ashow, setAshow] = useState(false);
   return (
     <QADataRowBox>
-      <p onClick={()=>setAshow(!Ashow)}>{Q}</p>
-      {Ashow ? <h5>{A}</h5> : ""}
+      <p onClick={() => setAshow(!Ashow)}>{Q}</p>
+      <h5 style={Ashow ? { height: "auto" } : { height: "0px" }}>{A}</h5>
     </QADataRowBox>
   );
 };

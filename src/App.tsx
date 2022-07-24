@@ -10,8 +10,9 @@ import Dashboard from "./view/Dashboard";
 import Rewards from "./view/Rewards";
 import Medal from "./view/Medal";
 import Ido from "./view/Ido";
-import Account from "./view/Account";
-import Calculator from "./view/Calculator";
+// import Account from "./view/Account";
+// import Calculator from "./view/Calculator";
+import Charity from "./view/Charity";
 
 function App() {
   const { t } = useTranslation();
@@ -31,11 +32,11 @@ function App() {
               <Route path="/rewards" element={<Rewards></Rewards>} />
               <Route path="/medal" element={<Medal></Medal>} />
               <Route path="/ido" element={<Ido></Ido>} />
-              <Route path="/account" element={<Account></Account>} />
-              <Route path="/calculator" element={<Calculator></Calculator>} />
+              {/* <Route path="/account" element={<Account></Account>} /> */}
+              {/* <Route path="/calculator" element={<Calculator></Calculator>} /> */}
+              <Route path="/charity" element={<Charity></Charity>} />
             </Routes>
           </Menu>
-          <div style={{ padding: "32px", width: "400px" }}></div>
         </ThemeProvider>
       </BrowserRouter>
     </div>

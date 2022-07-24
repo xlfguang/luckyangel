@@ -29,22 +29,23 @@ export default function Swap() {
   const { t } = useTranslation();
   return (
     <Page>
-      <Title>{t("Lucky Angel Auto-Staking Protocol")}</Title>
+      <Title>{t("Lucky Angel")}</Title>
 
       <AutoFlex
         maxWidth="1200PX"
         width={"100%"}
         justifyContent="space-evenly"
         margin="20px"
+        alignItems="stretch"
       >
         <BorderBox margin="0 20px 0 0">
           <Flex flexDirection={"column"} alignItems={"flex-start"}>
             <p style={{ fontSize: "32px", color: "#585858" }}>
-              {t("Charity Lottery Pledge and Dividend Agreement")}
+              {t("Charity Lottery Pledge and Dividend Protocol")}
             </p>
             <br></br>
             <IconText>
-              {t("Automatically distribute USDT in your wallet")}
+              {t("Automatically distribute $USDT for holders")}
             </IconText>
             <IconText>
               {t(
@@ -52,14 +53,12 @@ export default function Swap() {
               )}
             </IconText>
             <IconText>
-              {t("1% of each transaction goes into the Marketing Fund")}
+              {t("1% of each transaction goes into the Marketing wallet")}
             </IconText>
             <IconText>
-              {t("2% of each transaction goes to charitable funds")}
+              {t("2% of each transaction goes to charity wallet")}
             </IconText>
-            <IconText>
-              {t("2% of each transaction goes into the dividend fund")}
-            </IconText>
+            <IconText>{t("2% of each transaction for the dividend ")}</IconText>
             <IconText>
               {t(
                 "The original Lucky Angel partner permanent lottery NFT dividend system"
@@ -70,7 +69,7 @@ export default function Swap() {
                 "Reward users with a sustainable lottery model and dividends to make holders more determined to hold"
               )}
             </IconText>
-            <IconText>{t("Click Here to Buy Lucky Angel")}</IconText>
+
             <br />
             <Flex>
               <Button scale="sm" startIcon={<ArrowForwardIcon />} mr="20px">
@@ -83,7 +82,7 @@ export default function Swap() {
           </Flex>
         </BorderBox>
 
-        <BorderBox margin="10px 0 0 0 " bc="#fffbdad6">
+        <BorderBox bc="#fffbdad6">
           <Flex flexDirection={"column"} alignItems={"flex-start"}>
             <p style={{ fontSize: "32px", color: "#1fc7d4" }}>{t("ABOUT")}</p>
             <br></br>
@@ -95,7 +94,7 @@ export default function Swap() {
               }}
             >
               {t(
-                "The original Lucky Angel partner permanent lottery NFT dividend system"
+                "$Lucky Angel is the first token integrated dividends, lottery and charity function. We reward the holders in a variety of ways to encourage them to hold on. Holders can receive $USDT rewards in every transaction, and participate in the lottery every two days. They can also vote on charity activities in proportion to their holdings."
               )}
             </p>
           </Flex>
@@ -109,14 +108,14 @@ export default function Swap() {
           </MainBackground>
         </MainBackgroundCard>
       </div>
-      <Title>
-        {t(
-          "All Lucky Angel holders will receive automatic dividend rewards, free lottery coupons every two days, and select charitable activities based on the voting rights obtained by holding coins"
-        )}
-      </Title>
+
+      <Title>{t("The rights of Lucky Angel Holders")}</Title>
+      <Title margin="10px 0">{t("1.Dividend $USDT")}</Title>
+      <Title margin="10px 0">{t("2.Participate in the lottery")}</Title>
+      <Title margin="10px 0">{t("3.Vote for charity")}</Title>
 
       <Title margin="40px 0">
-        {t("How to participate in winning the prize?")}
+        {t("How to participate in the lottery?")}
       </Title>
       <AutoFlex justifyContent="center">
         <MainBackgroundCard>
@@ -131,7 +130,7 @@ export default function Swap() {
           <MainBackground>
             <Box padding="50px" width="400px">
               {t(
-                "If you pledge before the lottery draw, you will get a free lottery ticket. After the pledge is over, the pledge will be retrieved without any damage, and you will be waiting for the draw."
+                "If you stake before the lottery draw, you will get a free lottery ticket. After the staking is over, you can withdraw your tokens without tax and wait for the result"
               )}
             </Box>
           </MainBackground>
@@ -313,29 +312,75 @@ export default function Swap() {
       <Title margin="20px 0">
         {t("Automatically distribute USDT for holding coins")}
       </Title>
-      <Title margin="20px 0">{t("5% prize pool")}</Title>
-      <Title margin="20px 0">{t("1% Marketing Fund")}</Title>
-      <Title margin="20px 0">{t("2% charitable fund")}</Title>
-      <Title margin="20px 0">{t("2% dividend fund")}</Title>
+      <Title margin="20px 0">{t("5% lottery pool")}</Title>
+      <Title margin="20px 0">{t("1% Marketing wallet")}</Title>
+      <Title margin="20px 0">{t("2% charitable wallet")}</Title>
+      <Title margin="20px 0">{t("2% dividend rewards.")}</Title>
       <Title margin="40px 0">{t("FAQ's")}</Title>
 
-      <Flex flexDirection="column" alignItems="flex-start" width="80%" background='#daf7ffc4' padding='20px' borderRadius='20px'>
-        <QADataRow Q={t("Who is the Lucky Angel team?")} A={t("The Lucky Angel team is composed of well-known domestic community-based charitable organizations, development, marketing and customer support teams. We have a lot of resources in this market, which allows us to easily reach influencers and gain an edge over our competitors.")} />
-        <QADataRow Q={t("Has the team done a contract audit?")} A={t("Yes, the team has obtained InterFi Network's contract audit, adding a layer of trust and protection for our investors")} />
-        <QADataRow Q={t("What are Lucky Ange Tokens?")} A={t("Lucky Ange is a decentralized financial asset that rewards users with a sustainable dividend lottery model by using its unique innovative mechanism. It makes staking easier and more efficient, and provides the highest cryptocurrency stability returns for Lucky Ange token holders")} />
-        <QADataRow Q={t("What makes Lucky Ange different from other DeFi projects?")} A={t("Lucky Ange, a new protocol designed to create a new decentralized model in the DeFi space. Holders will receive USDT income dividends, and can get free lottery draws to earn huge bonuses, this method provides immediate value to token holders, while also cultivating an interest in seeing the project flourish. Get involved in the community. Our goal is to use the community as a cohesive and focused unit to create wealth and strength for the community. This new concept in DeFi, we believe it will set a new industry standard. Lucky Ange is currently one of the hottest projects in the DeFi space.")} />
-        <QADataRow Q={t("Where to buy $Lucky Ange tokens?")} A={t("Buy with Pancakeswap")} />
-        <QADataRow Q={t("How to buy $Lucky Ange tokens?")} A={`
+      <Flex
+        flexDirection="column"
+        alignItems="flex-start"
+        width="80%"
+        background="#daf7ffc4"
+        padding="20px"
+        borderRadius="20px"
+      >
+        <QADataRow
+          Q={t("Who is the Lucky Angel team?")}
+          A={t(
+            "The Lucky Angel team is composed of well-known domestic community-based charitable organizations, development, marketing and customer support teams. We have a lot of resources in this market, which allows us to easily reach influencers and gain an edge over our competitors."
+          )}
+        />
+        <QADataRow
+          Q={t("Has the team done a contract audit?")}
+          A={t(
+            "Yes, the team has obtained InterFi Network's contract audit, adding a layer of trust and protection for our investors"
+          )}
+        />
+        <QADataRow
+          Q={t("What are Lucky Ange Tokens?")}
+          A={t(
+            "Lucky Ange is a decentralized financial asset that rewards users with a sustainable dividend lottery model by using its unique innovative mechanism. It makes staking easier and more efficient, and provides the highest cryptocurrency stability returns for Lucky Ange token holders"
+          )}
+        />
+        <QADataRow
+          Q={t("What makes Lucky Ange different from other DeFi projects?")}
+          A={t(
+            "Lucky Ange, a new protocol designed to create a new decentralized model in the DeFi space. Holders will receive USDT income dividends, and can get free lottery draws to earn huge bonuses, this method provides immediate value to token holders, while also cultivating an interest in seeing the project flourish. Get involved in the community. Our goal is to use the community as a cohesive and focused unit to create wealth and strength for the community. This new concept in DeFi, we believe it will set a new industry standard. Lucky Ange is currently one of the hottest projects in the DeFi space."
+          )}
+        />
+        <QADataRow
+          Q={t("Where to buy $Lucky Ange tokens?")}
+          A={t("Buy with Pancakeswap")}
+        />
+        <QADataRow
+          Q={t("How to buy $Lucky Ange tokens?")}
+          A={`
         ${t("1. Go to the Pancakeswap Binance Smart Chain network.")}
-        ${t("2. Connect any compatible wallet (usually metamask / coinbase dex wallet / TP wallet/trustwallet).")}
-        ${t("3. In the top box, select the token you want to exchange with $Lucky Ange (usually BNB or USDT)")}
+        ${t(
+          "2. Connect any compatible wallet (usually metamask / coinbase dex wallet / TP wallet/trustwallet)."
+        )}
+        ${t(
+          "3. In the top box, select the token you want to exchange with $Lucky Ange (usually BNB or USDT)"
+        )}
         ${t("4. In the bottom box, paste the $Lucky Ange contract address.")}
-        ${t("5. Select the amount of $ Lucky Ange you want to buy, make sure you have enough BNB in your wallet to cover the GAS fee for the transaction.")}
+        ${t(
+          "5. Select the amount of $ Lucky Ange you want to buy, make sure you have enough BNB in your wallet to cover the GAS fee for the transaction."
+        )}
         ${t("6. Click the settings icon and set the slippage to 11%-15%.")}
-        ${t("7. When you are ready to confirm the transaction, tap Swap, then Confirm Swap. This will show the transaction to be confirmed in your wallet. Make sure you are willing and able to pay the quoted gas fee, then confirm the transaction in your wallet.")}
-        `} />
-        
-        <QADataRow Q={t("What should I do after buying $Lucky Ange tokens?")} A={t("Start earning USDT dividends simply by holding $ Lucky Ange tokens in your wallet. These rewards are distributed to your wallet in the form of $USDT tokens, allowing you to easily start earning. And get a lottery ticket.")} />
+        ${t(
+          "7. When you are ready to confirm the transaction, tap Swap, then Confirm Swap. This will show the transaction to be confirmed in your wallet. Make sure you are willing and able to pay the quoted gas fee, then confirm the transaction in your wallet."
+        )}
+        `}
+        />
+
+        <QADataRow
+          Q={t("What should I do after buying $Lucky Ange tokens?")}
+          A={t(
+            "Start earning USDT dividends simply by holding $ Lucky Ange tokens in your wallet. These rewards are distributed to your wallet in the form of $USDT tokens, allowing you to easily start earning. And get a lottery ticket."
+          )}
+        />
       </Flex>
     </Page>
   );

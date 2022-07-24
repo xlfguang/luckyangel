@@ -1,8 +1,11 @@
 import Page from "src/Page";
-import { Button, Flex, Text, Box, BoxProps } from "@pancakeswap/uikit";
+import { Button, Flex, Text, Box, BoxProps, Input } from "@pancakeswap/uikit";
 import { AutoFlex } from "src/components/AutoFlex/AutoFlex";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
+import InputWrap, { ActionInput, InputPanel } from "src/components/InputWrap";
+import { useState } from "react";
+import NumberBox from "./components/numberBox";
 
 const CardBoxStyle = styled(Box)`
   margin: 20px 0;
@@ -14,60 +17,138 @@ const CardBoxStyle = styled(Box)`
     width: 100%;
   }
 `;
+const BcBox = styled(Box)`
+  margin: 20px 0;
+  background: linear-gradient(to right, #abbfff, #8afff9);
+  border-radius: 20px;
+  width: 70%;
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+`;
+
+const LuckyNumbers = ({num}:{num:number | string})=>{
+  return (
+    <Text fontSize="28px"  letterSpacing='5px'>{num}</Text>
+  )
+}
 const CardBox: React.FC<
-  { topText: string; bottomText: string } & BoxProps &
-    React.HTMLAttributes<HTMLDivElement>
-> = ({ topText, bottomText, ...porps }) => {
+  { topText: string } & BoxProps & React.HTMLAttributes<HTMLDivElement>
+> = ({ topText, children, ...porps }) => {
   return (
     <CardBoxStyle {...porps}>
       <Text color="#0034b4" bold fontSize="24px">
         {topText}
       </Text>
-      <Text color="#295358" bold fontSize="24px">
-        {bottomText}
-      </Text>
+
+      {children}
     </CardBoxStyle>
   );
 };
 
 export default function Medal() {
   const { t } = useTranslation();
+  const [inputValue, setInputValue] = useState("");
   return (
     <Page>
       <Box width="70%" mt="40px">
+        <Flex alignItems="center" justifyContent="space-between" mb='20px'>
+          <Text fontSize="80px" bold>
+            {t("The lottery results")}
+          </Text>
+          <NumberBox num="1547"></NumberBox>
+        </Flex>
         <AutoFlex isWrap justifyContent="space-between">
-          <CardBox
-            topText={t("Number of Medals in the Network")}
-            bottomText={"1999"}
-          />
-          <CardBox topText={t("我的勋章持有数量")} bottomText={"0"} />
-          <CardBox topText={t("Dividend Received")} bottomText={"4,051"} />
-          <CardBox
-            topText={t("Expected dividend per Medal (day)")}
-            bottomText={"12"}
-          />
-          <CardBox
-            topText={t("Expected dividend per Medal (month)")}
-            bottomText={"12"}
-          />
-          <CardBox
-            topText={t("Expected dividend per Medal (year)")}
-            bottomText={"12"}
-          />
+          <CardBox topText={t("Pool Value")}>
+            <Text color="#295358" bold fontSize="24px">
+              {t("1st Price")}
+            </Text>
+            <Text color="#295358" bold fontSize="24px">
+              {t("2nd Price")}
+            </Text>
+            <Text color="#295358" bold fontSize="24px">
+              {t("3rd Price")}
+            </Text>
+          </CardBox>
+          <CardBox topText={t("Total lottery tickets")}>
+            <Text color="#295358" bold fontSize="24px">
+              {t("My lottery tickets")}
+            </Text>
+            <Text color="#295358" bold fontSize="24px">
+              {t("Times I participated")}
+            </Text>
+            <Text color="#295358" bold fontSize="24px">
+              {t("Rewards I have winned")}
+            </Text>
+          </CardBox>
         </AutoFlex>
       </Box>
 
       <Box width="70%" mt="40px">
         <Text mb="20px" textAlign="left" bold fontSize="30px">
-          {t("Dividends you can receive:")} {0} {t("Lucky Angel")}
-        </Text>
-        <Text textAlign="left" bold fontSize="30px" color="#000">
-          {t("My Medal")}: 
-          <span style={{ fontSize: "16px" }}>
-            {"NFT Contract Address:0x9f278be3867CA5e6DDb99ED85C3F035CbA1A02D5"}
-          </span>
+          {t("Participate")}
         </Text>
       </Box>
+      <BcBox>
+        <Text mb="20px" textAlign="left" fontSize="24px">
+          {t("Hold tokens")} : 11
+        </Text>
+        <Text mb="20px" textAlign="left" fontSize="24px">
+          {t("Stake tokens")} : 11
+        </Text>
+        <Text mb="20px" textAlign="left" fontSize="24px">
+          {t("Hold NFTs")} : 11
+        </Text>
+        <Text mb="20px" textAlign="left" fontSize="24px">
+          {t("Hold tickets")} : 11
+        </Text>
+
+        <Box>
+          <Button mr="20px">{t("Stake")}</Button>
+          <Button>{t("Withdraw")}</Button>
+        </Box>
+        <Box mt="20px">
+          <Flex>
+            <Button style={{ whiteSpace: "nowrap" }} mr="10px">
+              {t("Claim Your Tickets")}
+            </Button>
+            <InputWrap
+              readOnly={false}
+              text={t("Fill in your tickets")}
+              defaultVal={inputValue}
+            ></InputWrap>
+          </Flex>
+        </Box>
+      </BcBox>
+      <Box width="70%" mt="20px">
+        <Text mb="20px" textAlign="left" bold fontSize="30px">
+          {t("My lucky numbers")}
+        </Text>
+      </Box>
+      <BcBox>
+      <LuckyNumbers num={'1545'}/>
+      </BcBox>
+      {/* <Flex width="70%" mt="40px">
+        <Text mb="20px" textAlign="left" bold fontSize="30px">
+          {t("Participate in the draw")}:
+        </Text>
+        <Flex ml="20px" flexDirection="column">
+          <Input
+            type="text"
+            scale="sm"
+            value={inputValue}
+            placeholder={t("Number of pledged tokens")}
+            onInput={(e) => {
+              setInputValue((e.target as any).value);
+            }}
+          />
+          <Button mt="10px">{t("pledge")}</Button>
+          <Button mt="10px" variant="secondary" disabled={!inputValue}>
+            {t("Fill in the lottery")}
+          </Button>
+        </Flex>
+      </Flex> */}
     </Page>
   );
 }

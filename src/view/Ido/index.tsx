@@ -198,7 +198,7 @@ export default function Ido() {
   return (
     <Page>
       <Card>
-        <CardHeader>{t("EGG PLUS IDO")}</CardHeader>
+        <CardHeader>{t("Lucky Angel PLUS IDO")}</CardHeader>
         <CardBody>
           <div className="desc-image">
             <IdoMe>

@@ -12,12 +12,12 @@ const config: (t: any) => MenuItemsType[] = (t) => [
     href: "/dashboard",
   },
   {
-    label: t("Lottery"),
+    label: t("Partner"),
     icon: "rewards",
     href: "/rewards",
   },
   {
-    label: t("Charity"),
+    label: t("Lootery"),
     icon: "medal",
     href: "/medal",
   },
@@ -27,15 +27,20 @@ const config: (t: any) => MenuItemsType[] = (t) => [
     href: "/ido",
   },
   {
-    label: t("Account"),
-    icon: "account",
-    href: "/account",
-  },
-  {
-    label: t("Calculator"),
-    icon: "calculator",
-    href: "/calculator",
-  },
+    label: t("Charity"),
+    icon: "Charity",
+    href: "/charity",
+  }
+  // {
+  //   label: t("Account"),
+  //   icon: "account",
+  //   href: "/account",
+  // },
+  // {
+  //   label: t("Calculator"),
+  //   icon: "calculator",
+  //   href: "/calculator",
+  // },
 ];
 
 export default config;

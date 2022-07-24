@@ -9,8 +9,8 @@ i18n
 	// 所有配置选项: https://www.i18next.com/overview/configuration-options
 	.init({
 		resources,
-		fallbackLng: "zh",
-		lng: "zh",
+		fallbackLng: "en",
+		lng: "en",
 		debug: true,
 		interpolation: {
 			escapeValue: false, // not needed for react as it escapes by default
