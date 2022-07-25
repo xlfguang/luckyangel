@@ -32,7 +32,7 @@ export const Header = () => {
         <Image
           width={40}
           height={40}
-          src="https://www.eggplus.org/img/logo.png"
+          src="/public/logo.png"
         ></Image>
         <Flex>
           {links.map((link, index) => (

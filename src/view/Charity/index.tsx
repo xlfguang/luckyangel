@@ -105,22 +105,22 @@ const Charity = () => {
           <CardBody>
             <Flex justifyContent="space-between">
               <ImgBox
-                src={"https://www.eggplus.org/img/logo.png"}
+                src={"/public/logo.png"}
                 text={"图片的文字"}
                 vote
               />
               <ImgBox
-                src={"https://www.eggplus.org/img/logo.png"}
+                src={"/public/logo.png"}
                 text={"图片的文字"}
                 vote
               />
               <ImgBox
-                src={"https://www.eggplus.org/img/logo.png"}
+                src={"/public/logo.png"}
                 text={"图片的文字"}
                 vote
               />
               <ImgBox
-                src={"https://www.eggplus.org/img/logo.png"}
+                src={"/public/logo.png"}
                 text={"图片的文字"}
                 vote
               />
@@ -135,35 +135,35 @@ const Charity = () => {
           <CardBody>
             <Flex width="100%" overflowX="scroll">
               <ImgBox
-                src={"https://www.eggplus.org/img/logo.png"}
+                src={"/public/logo.png"}
                 text={"图片的文字"}
               />
               <ImgBox
-                src={"https://www.eggplus.org/img/logo.png"}
+                src={"/public/logo.png"}
                 text={"图片的文字"}
               />
               <ImgBox
-                src={"https://www.eggplus.org/img/logo.png"}
+                src={"/public/logo.png"}
                 text={"图片的文字"}
               />
               <ImgBox
-                src={"https://www.eggplus.org/img/logo.png"}
+                src={"/public/logo.png"}
                 text={"图片的文字"}
               />
               <ImgBox
-                src={"https://www.eggplus.org/img/logo.png"}
+                src={"/public/logo.png"}
                 text={"图片的文字"}
               />{" "}
               <ImgBox
-                src={"https://www.eggplus.org/img/logo.png"}
+                src={"/public/logo.png"}
                 text={"图片的文字"}
               />{" "}
               <ImgBox
-                src={"https://www.eggplus.org/img/logo.png"}
+                src={"/public/logo.png"}
                 text={"图片的文字"}
               />{" "}
               <ImgBox
-                src={"https://www.eggplus.org/img/logo.png"}
+                src={"/public/logo.png"}
                 text={"图片的文字"}
               />
             </Flex>
