@@ -140,42 +140,42 @@ export default function Swap() {
 
       <AutoFlex justifyContent="center" isWrap alignItems="stretch" width="80%">
         <IconCard
-          imgUrl={"https://www.eggplus.org/expansion/describe/img/icon1.png"}
+          imgUrl={"/img/logo.png"}
           title={t("Dividends for holding coins")}
           text={t(
             "Lucky Angel is a native token for holding coins to obtain dividends. Each token holder automatically receives USDT dividends."
           )}
         />
         <IconCard
-          imgUrl={"https://www.eggplus.org/expansion/describe/img/icon1.png"}
+          imgUrl={"/img/logo.png"}
           title={t("How to get the lottery")}
           text={t(
             "Hold 100 Lucky Angel tokens for pledge at any time from 20:40-21:00 on the day of each lottery draw to get 1 free lottery (the number can be superimposed, that is, 200 tokens can get 2 coupons, which will be invalid after the end of the lottery draw), and then Fill in the number, take back the pledge at 21:00 without damage, and wait for the draw."
           )}
         />
         <IconCard
-          imgUrl={"https://www.eggplus.org/expansion/describe/img/icon1.png"}
+          imgUrl={"/img/logo.png"}
           title={t("Lottery Rules")}
           text={t(
             "The lottery draw is held every two days. The lottery time is fixed at 21:30. The winning numbers of each issue will be born from 1000 numbers from 1 to 1000. Each lottery ticket can be filled in the number freely. The lottery number and the lottery number are the same as the winning number."
           )}
         />
         <IconCard
-          imgUrl={"https://www.eggplus.org/expansion/describe/img/icon1.png"}
+          imgUrl={"/img/logo.png"}
           title={t("Lottery winning amount")}
           text={t(
             "The total amount of each draw is 50% of the bonus fund. The first prize gets 50% of the total draw amount, the second prize gets 30%, and the third prize gets 20%. If multiple people win the lottery, the winning amount will be divided equally. The winnings will be accumulated to the next period, and the initial bonus of the bonus fund pool is 30,000 USDT."
           )}
         />
         <IconCard
-          imgUrl={"https://www.eggplus.org/expansion/describe/img/icon1.png"}
+          imgUrl={"/img/logo.png"}
           title={t("NFT cooperation lottery")}
           text={t(
             "The total circulation of NFT cooperation lottery is 450, and each NFT cooperation lottery will be obtained without pledge to obtain each lottery. If the NFT cooperation lottery is transferred, its rights will also be transferred."
           )}
         />
         <IconCard
-          imgUrl={"https://www.eggplus.org/expansion/describe/img/icon1.png"}
+          imgUrl={"/img/logo.png"}
           title={t("Charity Vote")}
           text={t(
             "The corresponding voting weight is obtained according to the amount of currency held, and each charitable event is selected by voting."

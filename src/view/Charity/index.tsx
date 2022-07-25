@@ -105,22 +105,22 @@ const Charity = () => {
           <CardBody>
             <Flex justifyContent="space-between">
               <ImgBox
-                src={"/public/logo.png"}
+                src={"/img/logo.png"}
                 text={"图片的文字"}
                 vote
               />
               <ImgBox
-                src={"/public/logo.png"}
+                src={"/img/logo.png"}
                 text={"图片的文字"}
                 vote
               />
               <ImgBox
-                src={"/public/logo.png"}
+                src={"/img/logo.png"}
                 text={"图片的文字"}
                 vote
               />
               <ImgBox
-                src={"/public/logo.png"}
+                src={"/img/logo.png"}
                 text={"图片的文字"}
                 vote
               />
@@ -135,35 +135,35 @@ const Charity = () => {
           <CardBody>
             <Flex width="100%" overflowX="scroll">
               <ImgBox
-                src={"/public/logo.png"}
+                src={"/img/logo.png"}
                 text={"图片的文字"}
               />
               <ImgBox
-                src={"/public/logo.png"}
+                src={"/img/logo.png"}
                 text={"图片的文字"}
               />
               <ImgBox
-                src={"/public/logo.png"}
+                src={"/img/logo.png"}
                 text={"图片的文字"}
               />
               <ImgBox
-                src={"/public/logo.png"}
+                src={"/img/logo.png"}
                 text={"图片的文字"}
               />
               <ImgBox
-                src={"/public/logo.png"}
+                src={"/img/logo.png"}
                 text={"图片的文字"}
               />{" "}
               <ImgBox
-                src={"/public/logo.png"}
+                src={"/img/logo.png"}
                 text={"图片的文字"}
               />{" "}
               <ImgBox
-                src={"/public/logo.png"}
+                src={"/img/logo.png"}
                 text={"图片的文字"}
               />{" "}
               <ImgBox
-                src={"/public/logo.png"}
+                src={"/img/logo.png"}
                 text={"图片的文字"}
               />
             </Flex>

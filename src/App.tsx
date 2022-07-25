@@ -13,6 +13,7 @@ import Ido from "./view/Ido";
 // import Account from "./view/Account";
 // import Calculator from "./view/Calculator";
 import Charity from "./view/Charity";
+import MyContextWrapper from "./components/Content/Content";
 
 function App() {
   const { t } = useTranslation();
@@ -22,23 +23,25 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <ThemeProvider theme={light}>
-          <ResetCSS />
-          <Menu>
-            <Routes>
-              <Route path="/" element={<Swap></Swap>} />
-              <Route path="/dashboard" element={<Dashboard></Dashboard>} />
-              <Route path="/rewards" element={<Rewards></Rewards>} />
-              <Route path="/medal" element={<Medal></Medal>} />
-              <Route path="/ido" element={<Ido></Ido>} />
-              {/* <Route path="/account" element={<Account></Account>} /> */}
-              {/* <Route path="/calculator" element={<Calculator></Calculator>} /> */}
-              <Route path="/charity" element={<Charity></Charity>} />
-            </Routes>
-          </Menu>
-        </ThemeProvider>
-      </BrowserRouter>
+      <MyContextWrapper>
+        <BrowserRouter>
+          <ThemeProvider theme={light}>
+            <ResetCSS />
+            <Menu>
+              <Routes>
+                <Route path="/" element={<Swap></Swap>} />
+                <Route path="/dashboard" element={<Dashboard></Dashboard>} />
+                <Route path="/rewards" element={<Rewards></Rewards>} />
+                <Route path="/medal" element={<Medal></Medal>} />
+                <Route path="/ido" element={<Ido></Ido>} />
+                {/* <Route path="/account" element={<Account></Account>} /> */}
+                {/* <Route path="/calculator" element={<Calculator></Calculator>} /> */}
+                <Route path="/charity" element={<Charity></Charity>} />
+              </Routes>
+            </Menu>
+          </ThemeProvider>
+        </BrowserRouter>
+      </MyContextWrapper>
     </div>
   );
 }

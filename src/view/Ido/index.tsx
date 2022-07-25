@@ -205,7 +205,7 @@ export default function Ido() {
               <div className="image">
                 <img
                   alt="logo"
-                  src="https://www.eggplus.org/expansion/describe/img/icon1.png"
+                  src="/img/logo.png"
                 />
               </div>
               <div className="image-title">
