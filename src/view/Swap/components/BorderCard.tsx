@@ -10,5 +10,5 @@ export const BorderBox = styled(Box)<{ borderColor?: string,margin?:string,bc?:s
   color: #fff;
   border-color: ${({ borderColor }) => borderColor || "#e6e6e6"};
   margin: ${({ margin }) => margin || "0"};
-  background-color: ${({ bc }) => bc || ""};
+  background: ${({ bc }) => bc || ""};
 `;

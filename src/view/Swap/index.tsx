@@ -24,6 +24,7 @@ import icon2 from "../../images/icon16.png";
 import styled from "styled-components";
 import { AccountCard } from "src/components/GridContainer";
 import { QADataRow } from "./components/QADataRow";
+import LineText from "./components/LineText";
 
 export default function Swap() {
   const { t } = useTranslation();
@@ -82,15 +83,20 @@ export default function Swap() {
           </Flex>
         </BorderBox>
 
-        <BorderBox bc="#fffbdad6">
-          <Flex flexDirection={"column"} alignItems={"flex-start"}>
-            <p style={{ fontSize: "32px", color: "#1fc7d4" }}>{t("ABOUT")}</p>
+        <BorderBox bc="linear-gradient(to right,#439ca5,#6fd5d0)">
+          <Flex
+            flexDirection={"column"}
+            height="100%"
+            alignItems={"flex-start"}
+            justifyContent="space-between"
+          >
+            <p style={{ fontSize: "32px", color: "#fff" }}>{t("ABOUT")}</p>
             <br></br>
             <p
               style={{
                 fontSize: "18px",
                 marginBottom: "15px",
-                color: "#00727a",
+                color: "#000",
               }}
             >
               {t(
@@ -109,14 +115,34 @@ export default function Swap() {
         </MainBackgroundCard>
       </div>
 
-      <Title>{t("The rights of Lucky Angel Holders")}</Title>
-      <Title margin="10px 0">{t("1.Dividend $USDT")}</Title>
-      <Title margin="10px 0">{t("2.Participate in the lottery")}</Title>
-      <Title margin="10px 0">{t("3.Vote for charity")}</Title>
+      <Flex width="60%" flexDirection="column" alignItems="stretch">
+        <Box width="80%">
+          <p
+            style={{
+              color: "rgb(88, 88, 88)",
+              letterSpacing: "-10px",
+              fontSize: "100px",
+              textAlign: "left",
+            }}
+          >
+            {t("The rights of Lucky Angel Holders")}
+          </p>
+          {/* <LineText text={t("The rights of Lucky Angel Holders")}></LineText> */}
+        </Box>
+        <Flex flexDirection="column" alignItems="end">
+          <Title fs="42px" margin="10px 0" color="rgb(40 41 159)">
+            {t("1.Dividend $USDT")}
+          </Title>
+          <Title fs="60px" margin="10px 0" color="rgb(0 137 255)">
+            {t("2.Participate in the lottery")}
+          </Title>
+          <Title margin="10px 0" color="rgb(43 174 142)">
+            {t("3.Vote for charity")}
+          </Title>
+        </Flex>
+      </Flex>
 
-      <Title margin="40px 0">
-        {t("How to participate in the lottery?")}
-      </Title>
+      <Title margin="40px 0">{t("How to participate in the lottery?")}</Title>
       <AutoFlex justifyContent="center">
         <MainBackgroundCard>
           <MainBackground>
@@ -309,13 +335,37 @@ export default function Swap() {
           <Text>10%{t("Slippage")}</Text>
         </Box>
       </Flex>
-      <Title margin="20px 0">
-        {t("Automatically distribute USDT for holding coins")}
-      </Title>
-      <Title margin="20px 0">{t("5% lottery pool")}</Title>
-      <Title margin="20px 0">{t("1% Marketing wallet")}</Title>
-      <Title margin="20px 0">{t("2% charitable wallet")}</Title>
-      <Title margin="20px 0">{t("2% dividend rewards.")}</Title>
+
+      <Flex width="60%" flexDirection="column" alignItems="stretch">
+        <Box width="100%">
+          <p
+            style={{
+              color: "#000",
+              letterSpacing: "-10px",
+              fontSize: "100px",
+              textAlign: "right",
+            }}
+          >
+            {t("Automatically distribute USDT for holding coins")}
+          </p>
+          {/* <LineText text={t("The rights of Lucky Angel Holders")}></LineText> */}
+        </Box>
+        <Flex flexDirection="column" alignItems="baseline">
+          <Title fs="42px" color="rgb(181 83 83)" margin="20px 0">
+            {t("5% lottery pool")}
+          </Title>
+          <Title color="#000" fs="66px" margin="20px 0">
+            {t("1% Marketing wallet")}
+          </Title>
+          <Title color="rgb(0 57 255)" fs="36px" margin="20px 0">
+            {t("2% charitable wallet")}
+          </Title>
+          <Title color="rgb(14 14 44 / 40%)" fs="52px" margin="20px 0">
+            {t("2% dividend rewards.")}
+          </Title>
+        </Flex>
+      </Flex>
+
       <Title margin="40px 0">{t("FAQ's")}</Title>
 
       <Flex

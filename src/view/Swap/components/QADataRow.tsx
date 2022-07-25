@@ -23,7 +23,7 @@ const QADataRowBox = styled(Box)`
     margin-bottom: 10px;
   }
   & > p:hover {
-    color: rgb(212,35,122);
+    color: rgb(212, 35, 122);
   }
 
   & > h5 {
@@ -36,7 +36,7 @@ const QADataRowBox = styled(Box)`
     margin-top: 10px;
     text-align: left;
     overflow: hidden;
-    transition: all 0.3s;
+    transition: all 1s;
   }
 `;
 
@@ -45,7 +45,7 @@ export const QADataRow = ({ Q, A }: { Q: string; A: string }) => {
   return (
     <QADataRowBox>
       <p onClick={() => setAshow(!Ashow)}>{Q}</p>
-      <h5 style={Ashow ? { height: "auto" } : { height: "0px" }}>{A}</h5>
+      <h5 style={Ashow ? { maxHeight: "200px" } : { maxHeight: "0px" }}>{A}</h5>
     </QADataRowBox>
   );
 };
