@@ -9,11 +9,13 @@ import {
   Button,
   Flex,
 } from "@pancakeswap/uikit";
+import { useContext,useState } from "react";
 import { useTranslation } from "react-i18next";
 import Page from "src/Page";
 import styled from "styled-components";
 import TakePart from "./components/TakePart";
-
+import { MyContext } from "src/components/Content/Content";
+import { BigNumber, Contract, ethers, Wallet, providers, utils } from 'ethers';
 export const IdoProgressbar = styled(Box)`
   padding-right: 0;
   margin-right: 0;
@@ -195,6 +197,49 @@ export const IdoTitle = styled(Box)`
 `;
 export default function Ido() {
   const { t } = useTranslation();
+  const [contracts,setContrats] = useState({} as any);
+  const [amount,setAmount] = useState("0");
+  const { state, dispatch } = useContext(MyContext) as any;
+  const { privateAddress,walletWithProvider } = state.obj;
+
+  const approve = async() =>{
+    if(!privateAddress){
+      // message.error("No connect Wallet");
+      return;
+    }
+    if(!walletWithProvider){
+      // message.error("No connect Wallet");
+      return;
+    }
+    var erc20AbiPool = require("../abi/erc20.json");
+   (contracts.erc20 as any) = new Contract("0x3dDE19Ac15e8Ec470BfC4E8dCA790eFe0624c72d", erc20AbiPool, walletWithProvider);
+   var tx = await contracts["erc20"].approve("0xE37789d92ee3A8725A95F7b21599DCd0bEd78646","10000000000000000000000000000");
+       await tx.wait();
+      //  message.success("approve success");
+  }
+
+  const ido = async() =>{
+    if(!privateAddress){
+      // message.error("No connect Wallet");
+      return;
+    }
+    if(!walletWithProvider){
+      // message.error("No connect Wallet");
+      return;
+    }
+    var idoAbi = require("../abi/ido.json");
+    (contracts.ido as any) = new Contract("0xE37789d92ee3A8725A95F7b21599DCd0bEd78646", idoAbi, walletWithProvider);
+    var tx = await contracts["ido"].idohandel(privateAddress,amount);
+    await tx.wait();
+    
+
+  }
+
+  const setValue = (e:any) =>{
+
+    setAmount(e.target.value);
+  }
+
   return (
     <Page>
       <Card>
@@ -276,14 +321,19 @@ export default function Ido() {
                       autoComplete="off"
                       className="input-inner"
                       role="spinbutton"
+                      value = {amount}
+                      onBlur={(e) => setValue(e)}
                     />
                   </div>
                 </div>
               </div>
             </IdoInput>
 
-            <Button margin="10px 0" width="100%">
-              {t("Connect Wallet")}
+            <Button margin="10px 0" width="50%" onClick={()=>approve()}>
+              {"授权"}
+            </Button>
+            <Button margin="10px 0" width="50%" onClick={()=>ido()}>
+              {"认购"}
             </Button>
 
             <Flex justifyContent="space-between" alignItems="center">
