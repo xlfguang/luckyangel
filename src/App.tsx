@@ -15,7 +15,6 @@ import Ido from "./view/Ido";
 import Charity from "./view/Charity";
 import MyContextWrapper from "./components/Content/Content";
 import Load from "./components/Load";
-
 function App() {
   
 

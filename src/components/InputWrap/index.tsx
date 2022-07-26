@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "@pancakeswap/uikit";
 import styled from "styled-components";
+import { getValue } from "@testing-library/user-event/dist/utils";
 
 const InputRow = styled.div<{ selected: boolean }>`
   display: flex;
@@ -80,16 +81,19 @@ export const InputWrap = ({
   readOnly: boolean;
   text: string;
   defaultVal: string | null;
+
   btnClick?: () => void;
+
 }) => {
   const [inputValue, setInputValue] = useState(defaultVal || "");
+
   return (
     <div style={{ width: "100%" }}>
       {title && <WrapTitle>{title}</WrapTitle>}
       <ActionInput>
         <InputPanel
           placeholder=""
-          type="number"
+          type="text"
           readOnly={readOnly}
           value={inputValue}
           onInput={(e) => setInputValue((e.target as any).value)}

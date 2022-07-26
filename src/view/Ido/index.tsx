@@ -9,11 +9,16 @@ import {
   Button,
   Flex,
 } from "@pancakeswap/uikit";
+import { useContext,useEffect,useState } from "react";
 import { useTranslation } from "react-i18next";
 import Page from "src/Page";
 import styled from "styled-components";
 import TakePart from "./components/TakePart";
-
+import { MyContext } from "src/components/Content/Content";
+import { BigNumber, Contract, ethers, Wallet, providers, utils } from 'ethers';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {TokenAdr,UsdtAdr,LuckIdoAdr} from 'src/view/token';
 export const IdoProgressbar = styled(Box)`
   padding-right: 0;
   margin-right: 0;
@@ -195,8 +200,178 @@ export const IdoTitle = styled(Box)`
 `;
 export default function Ido() {
   const { t } = useTranslation();
+  const [contracts,setContrats] = useState({} as any);
+  const [amount,setAmount] = useState("0");
+  const [poolUsdtAmount,setPoolUsdtAmount] = useState("0");
+  const [userUsdtAmount,setUserUsdtAmount] = useState("0");
+  const [userAGAmount,setUserAGAmount] = useState("0");
+  const [userIdoUsdtAmount,setUserIdoUsdtAmount] = useState("0");
+  const [percentage,setPercentage] = useState(10);
+  const { state, dispatch } = useContext(MyContext) as any;
+  const { privateAddress,walletWithProvider } = state.obj;
+
+
+
+ useEffect(()=>{
+  (async()=>{
+    // var url = "https://bsc-dataseed.binance.org";
+    var url = "https://kovan.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"
+  var provider = new providers.JsonRpcProvider(url);
+  var erc20AbiPool = require("../abi/erc20.json");
+  contracts["USDT"] = new Contract(UsdtAdr, erc20AbiPool, provider);
+  var amountU = await contracts["USDT"].balanceOf(LuckIdoAdr);
+  setPercentage(amountU.div(BigNumber.from(10).pow(16)).toNumber()/500000);
+  setPoolUsdtAmount(amountU.div(BigNumber.from(10).pow(18)).toString());
+  if(privateAddress){
+    var amountU1 = await contracts["USDT"].balanceOf(privateAddress);
+    
+    contracts["AG"] = new Contract(TokenAdr, erc20AbiPool, provider);
+    var amountU2 = await contracts["AG"].balanceOf(privateAddress);
+    var idoAbi = require("../abi/ido.json");
+    contracts["ido"] = new Contract(LuckIdoAdr, idoAbi, provider);
+    var amountU3 = await contracts["ido"].userIdoAmount(privateAddress);
+    setUserAGAmount(amountU2.div(BigNumber.from(10).pow(18)).toString());
+    setUserUsdtAmount(amountU1.div(BigNumber.from(10).pow(18)).toString());
+    setUserIdoUsdtAmount(amountU3.toString());
+  }
+
+  })()
+  },[])
+
+  const approve = async() =>{
+    if(!privateAddress){
+      toast.error("No connect Wallet", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      // message.error("No connect Wallet");
+      return;
+    }
+    if(!walletWithProvider){
+      toast.error("No connect Wallet", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      // message.error("No connect Wallet");
+      return;
+    }
+    var erc20AbiPool = require("../abi/erc20.json");
+   (contracts.erc20 as any) = new Contract(UsdtAdr, erc20AbiPool, walletWithProvider);
+   var tx = await contracts["erc20"].approve(LuckIdoAdr,"10000000000000000000000000000");
+       await tx.wait();
+       toast.success("Approve success", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+  }
+
+  const ido = async() =>{
+    if(!privateAddress){
+      toast.error("No connect Wallet", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      return;
+    }
+    if(!walletWithProvider){
+      toast.error("No connect Wallet", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      return;
+    }
+    var idoAbi = require("../abi/ido.json");
+    (contracts.ido as any) = new Contract(LuckIdoAdr, idoAbi, walletWithProvider);
+    var tx = await contracts["ido"].idohandel("0x8Ab90d312da4FEBfa09FA9d7C393598aDCd14804",amount);
+    await tx.wait();
+
+    toast.success("Ido success", {
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
+    return;
+  }
+
+  const claim = async() =>{
+    if(!privateAddress){
+      toast.error("No connect Wallet", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      return;
+    }
+    if(!walletWithProvider){
+      toast.error("No connect Wallet", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      return;
+    }
+    var idoAbi = require("../abi/ido.json");
+    (contracts.ido as any) = new Contract(LuckIdoAdr, idoAbi, walletWithProvider);
+    var tx = await contracts["ido"].claim();
+    await tx.wait();
+
+    toast.success("Claim success", {
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
+    return;
+  }
+
+  const setValue = (e:any) =>{
+
+    setAmount(e.target.value);
+  }
+
   return (
     <Page>
+      <ToastContainer/>
       <Card>
         <CardHeader>{t("Lucky Angel PLUS IDO")}</CardHeader>
         <CardBody>
@@ -228,32 +403,32 @@ export default function Ido() {
             </IdoEntryList>
             <IdoEntryList>
               <div className="title">{t("Fund to Raise")}</div>
-              <div className="content">2,000,000 USDT</div>
+              <div className="content">500,000 USDT</div>
             </IdoEntryList>
             <IdoEntryList>
               <div className="title">{t("Token Price")}</div>
-              <div className="content">50 Lucky Angel / 100 USDT </div>
+              <div className="content">100 Lucky Angel / 100 USDT </div>
             </IdoEntryList>
             <IdoEntryList>
               <div className="title">{t("Max Raise Per User")}</div>
-              <div className="content"> 0 USDT</div>
+              <div className="content"> 500 USDT</div>
             </IdoEntryList>
             <IdoEntryList>
               <div className="title">{t("You Have Raised")}</div>
-              <div className="content">0 USDT</div>
+              <div className="content">{userIdoUsdtAmount} USDT</div>
             </IdoEntryList>
           </div>
 
           <div>
             <Box className="progress" mb="10px">
               <div className="list-title" style={{ marginBottom: "8px" }}>
-                {t("Increase Progression")} ({0} USDT / 2,000,000 USDT)
+                {t("Increase Progression")} ({poolUsdtAmount} USDT / 500,000 USDT)
               </div>
               <div role="progressbar">
                 <IdoProgressbar>
                   <div className="outer">
-                    <div className="inner" style={{ width: `${50}%` }}>
-                      <div className="innerText">{50}%</div>
+                    <div className="inner" style={{ width: `${percentage}%` }}>
+                      <div className="innerText">{percentage}%</div>
                     </div>
                   </div>
                 </IdoProgressbar>
@@ -276,28 +451,32 @@ export default function Ido() {
                       autoComplete="off"
                       className="input-inner"
                       role="spinbutton"
+                      onBlur={(e) => setValue(e)}
                     />
                   </div>
                 </div>
               </div>
             </IdoInput>
 
-            <Button margin="10px 0" width="100%">
-              {t("Connect Wallet")}
+            <Button margin="10px 0" width="50%" onClick={()=>approve()}>
+              {"授权"}
+            </Button>
+            <Button margin="10px 0" width="50%" onClick={()=>ido()}>
+              {"认购"}
             </Button>
 
             <Flex justifyContent="space-between" alignItems="center">
               <div style={{ width: "80%" }}>
                 <IdoTitle>
-                  {t("Your USDT Balance")}: {0}
+                  {t("Your USDT Balance")}: {userUsdtAmount}
                 </IdoTitle>
                 <IdoTitle>
-                  {t("Your Lucky Angel Balance")}: {0}
+                  {t("Your Lucky Angel Balance")}: {userAGAmount}
                 </IdoTitle>
               </div>
               <div className="box_fr">
                 <div className="desc-btn">
-                  <Button>{t("Claim")}</Button>
+                  <Button onClick={()=>claim()}>{t("Claim")}</Button>
                 </div>
               </div>
             </Flex>
