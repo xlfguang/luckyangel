@@ -14,7 +14,6 @@ import Ido from "./view/Ido";
 // import Calculator from "./view/Calculator";
 import Charity from "./view/Charity";
 import MyContextWrapper from "./components/Content/Content";
-
 function App() {
   const { t } = useTranslation();
   const noop = () => {

@@ -32,6 +32,7 @@ const CardBox: React.FC<
 
 export default function Rewards() {
   const { t } = useTranslation();
+
   return (
     <Page>
       <Button padding="0 100px" mb="20px" variant="danger">
@@ -96,7 +97,6 @@ export default function Rewards() {
           <CardBox topText={"0"} bottomText={t("团队人数")} />
         </AutoFlex>
       </Box>
-      
     </Page>
   );
 }

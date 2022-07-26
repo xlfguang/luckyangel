@@ -4,9 +4,13 @@ import { AutoFlex } from "src/components/AutoFlex/AutoFlex";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import InputWrap, { ActionInput, InputPanel } from "src/components/InputWrap";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import NumberBox from "./components/numberBox";
-
+import { MyContext } from "src/components/Content/Content";
+import { BigNumber, Contract, ethers, Wallet, providers, utils } from 'ethers';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {TokenAdr,UsdtAdr,LuckIdoAdr,LuckNFTAdr} from 'src/view/token';
 const CardBoxStyle = styled(Box)`
   margin: 20px 0;
   background: linear-gradient(to left, #abbfff, #8afff9);
@@ -49,9 +53,162 @@ const CardBox: React.FC<
 
 export default function Medal() {
   const { t } = useTranslation();
+  const [contracts,setContrats] = useState({} as any);
   const [inputValue, setInputValue] = useState("");
+  const { state, dispatch } = useContext(MyContext) as any;
+  const { privateAddress,walletWithProvider } = state.obj;
+  const approve = async() =>{
+    if(!privateAddress){
+      toast.error("No connect Wallet", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      // message.error("No connect Wallet");
+      return;
+    }
+    if(!walletWithProvider){
+      toast.error("No connect Wallet", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      // message.error("No connect Wallet");
+      return;
+    }
+    var erc20AbiPool = require("../abi/erc20.json");
+   (contracts.erc20 as any) = new Contract(TokenAdr, erc20AbiPool, walletWithProvider);
+   var tx = await contracts["erc20"].approve(LuckNFTAdr,"10000000000000000000000000000");
+       await tx.wait();
+       toast.success("Approve success", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+  }
+
+  const withdraw = async() =>{
+    if(!privateAddress){
+      toast.error("No connect Wallet", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      return;
+    }
+    if(!walletWithProvider){
+      toast.error("No connect Wallet", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      return;
+    }
+    var luckAbi = require("../abi/luck.json");
+    (contracts.luck as any) = new Contract(LuckNFTAdr, luckAbi, walletWithProvider);
+    var tx = await contracts["luck"].redeemToken();
+    await tx.wait();
+
+    toast.success("withdraw success", {
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
+    return;
+  }
+
+  const staking = async() =>{
+    if(!privateAddress){
+      toast.error("No connect Wallet", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      return;
+    }
+    if(!walletWithProvider){
+      toast.error("No connect Wallet", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      return;
+    }
+    console.log(inputValue);
+    var list = inputValue.split(",");
+    var erc20AbiPool = require("../abi/erc20.json");
+   (contracts.erc20 as any) = new Contract(TokenAdr, erc20AbiPool, walletWithProvider);
+   var apAmount = await contracts["erc20"].allowance(privateAddress,LuckNFTAdr);
+if(apAmount.toString() == "0"){
+  toast.error("No Approved", {
+    position: "top-right",
+    autoClose: 2500,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    });
+  return;
+}
+
+
+
+    var luckAbi = require("../abi/luck.json");
+    (contracts.luck as any) = new Contract(LuckNFTAdr, luckAbi, walletWithProvider);
+    var tx = await contracts["luck"].stakingNftClaim(list);
+    await tx.wait();
+
+    toast.success("claim lottery tickets success", {
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
+    return;
+  }
+
+  const setValues = (e:any)=>{
+      setInputValue(e);
+  }
   return (
     <Page>
+           <ToastContainer/>
       <Box width="70%" mt="40px">
         <Flex alignItems="center" justifyContent="space-between" mb='20px'>
           <Text fontSize="80px" bold>
@@ -105,18 +262,19 @@ export default function Medal() {
         </Text>
 
         <Box>
-          <Button mr="20px">{t("Stake")}</Button>
-          <Button>{t("Withdraw")}</Button>
+          <Button mr="20px" onClick={()=>{approve()}}>{t("Approve")}</Button>
+          <Button onClick={()=>{withdraw()}}>{t("Withdraw")}</Button>
         </Box>
         <Box mt="20px">
           <Flex>
-            <Button style={{ whiteSpace: "nowrap" }} mr="10px">
+            <Button style={{ whiteSpace: "nowrap" }} mr="10px" onClick={()=>{staking()}}>
               {t("Claim Your Tickets")}
             </Button>
             <InputWrap
               readOnly={false}
               text={t("Fill in your tickets")}
               defaultVal={inputValue}
+              getValues={setValues}
             ></InputWrap>
           </Flex>
         </Box>
