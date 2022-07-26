@@ -25,14 +25,16 @@ const BcBox = styled(Box)`
   padding: 50px 30px;
   display: flex;
   flex-direction: column;
-  align-items: baseline;
+  align-items: initial;
 `;
 
-const LuckyNumbers = ({num}:{num:number | string})=>{
+const LuckyNumbers = ({ num }: { num: number | string }) => {
   return (
-    <Text fontSize="28px"  letterSpacing='5px'>{num}</Text>
-  )
-}
+    <Text fontSize="28px" letterSpacing="5px">
+      {num}
+    </Text>
+  );
+};
 const CardBox: React.FC<
   { topText: string } & BoxProps & React.HTMLAttributes<HTMLDivElement>
 > = ({ topText, children, ...porps }) => {
@@ -53,11 +55,23 @@ export default function Medal() {
   return (
     <Page>
       <Box width="70%" mt="40px">
-        <Flex alignItems="center" justifyContent="space-between" mb='20px'>
+        <Flex alignItems="center" justifyContent="space-between" mb="30px">
           <Text fontSize="80px" bold>
             {t("The lottery results")}
           </Text>
           <NumberBox num="1547"></NumberBox>
+        </Flex>
+        <Flex alignItems="center" justifyContent="space-between" mb="30px">
+          <Text fontSize="80px" bold>
+            {t("The lottery results")}
+          </Text>
+          <NumberBox num="2547"></NumberBox>
+        </Flex>
+        <Flex alignItems="center" justifyContent="space-between" mb="30px">
+          <Text fontSize="80px" bold>
+            {t("The lottery results")}
+          </Text>
+          <NumberBox num="5447"></NumberBox>
         </Flex>
         <AutoFlex isWrap justifyContent="space-between">
           <CardBox topText={t("Pool Value")}>
@@ -104,20 +118,38 @@ export default function Medal() {
           {t("Hold tickets")} : 11
         </Text>
 
-        <Box>
+        <Flex>
           <Button mr="20px">{t("Stake")}</Button>
           <Button>{t("Withdraw")}</Button>
-        </Box>
+        </Flex>
         <Box mt="20px">
-          <Flex>
-            <Button style={{ whiteSpace: "nowrap" }} mr="10px">
-              {t("Claim Your Tickets")}
-            </Button>
-            <InputWrap
-              readOnly={false}
-              text={t("Fill in your tickets")}
-              defaultVal={inputValue}
-            ></InputWrap>
+          <Flex justifyContent="space-between">
+            <Flex width="45%">
+              <Button style={{ whiteSpace: "nowrap" }} mr="10px">
+                {t("Claim Your Tickets")}
+              </Button>
+              <InputWrap
+                readOnly={false}
+                text={t("Fill in your tickets")}
+                defaultVal={inputValue}
+                btnClick={() => {
+                  console.log(111);
+                }}
+              ></InputWrap>
+            </Flex>
+            <Flex width="45%">
+              <Button style={{ whiteSpace: "nowrap" }} mr="10px">
+                NFT {t("Claim Your Tickets")}
+              </Button>
+              <InputWrap
+                readOnly={false}
+                text={t("Fill in your tickets")}
+                defaultVal={inputValue}
+                btnClick={() => {
+                  console.log(111);
+                }}
+              ></InputWrap>
+            </Flex>
           </Flex>
         </Box>
       </BcBox>
@@ -127,7 +159,7 @@ export default function Medal() {
         </Text>
       </Box>
       <BcBox>
-      <LuckyNumbers num={'1545'}/>
+        <p style={{ textAlign: "left" }}>1544</p>
       </BcBox>
       {/* <Flex width="70%" mt="40px">
         <Text mb="20px" textAlign="left" bold fontSize="30px">

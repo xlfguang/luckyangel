@@ -74,11 +74,13 @@ export const InputWrap = ({
   readOnly = false,
   text,
   defaultVal = null,
+  btnClick
 }: {
   title?: string;
   readOnly: boolean;
   text: string;
   defaultVal: string | null;
+  btnClick?: () => void;
 }) => {
   const [inputValue, setInputValue] = useState(defaultVal || "");
   return (
@@ -92,7 +94,7 @@ export const InputWrap = ({
           value={inputValue}
           onInput={(e) => setInputValue((e.target as any).value)}
         />
-        <InputBtn>{text}</InputBtn>
+        <InputBtn onClick={btnClick}>{text}</InputBtn>
       </ActionInput>
     </div>
   );

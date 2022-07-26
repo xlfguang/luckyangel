@@ -14,13 +14,10 @@ import Ido from "./view/Ido";
 // import Calculator from "./view/Calculator";
 import Charity from "./view/Charity";
 import MyContextWrapper from "./components/Content/Content";
-import Pop from "./components/Pop/Pop";
+import Load from "./components/Load";
 
 function App() {
-  const { t } = useTranslation();
-  const noop = () => {
-    console.log(1);
-  };
+  
 
   return (
     <div className="App">
@@ -39,15 +36,7 @@ function App() {
                 {/* <Route path="/calculator" element={<Calculator></Calculator>} /> */}
                 <Route path="/charity" element={<Charity></Charity>} />
               </Routes>
-              <Pop
-                show={true}
-                title={"123"}
-                onClose={() => {
-                  console.log(1);
-                }}
-              >
-                123
-              </Pop>
+              <Load show={false}></Load>
             </Menu>
           </ThemeProvider>
         </BrowserRouter>

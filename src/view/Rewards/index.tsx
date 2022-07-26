@@ -39,26 +39,27 @@ export default function Rewards() {
         {t("Connect Wallet")}
       </Button>
       <Flex width="70%" justifyContent="space-between">
-        <Box width="45%">
+        <Box width="100%">
           <BorderBox borderColor="rgb(0 150 212)">
-            <Text color="rgb(0 150 212)" fontSize="38px" fontWeight="600">
-              {t("Apply for Collaboration")}
-            </Text>
-            <Button padding="0 50px" mr="16px" mt="20px" disabled>
-              {t("Staking")}
-            </Button>
-            <Button padding="0 50px" mr="16px" mt="20px" disabled>
-              {t("Claim")}
-            </Button>
-          </BorderBox>
-        </Box>
-
-        <Box width="45%">
-          <BorderBox borderColor="rgb(158 183 255)">
-            <Text fontSize="38px" fontWeight="600">
-              {t("Role")}
-            </Text>
-            <Button mt="20px">{t("Ordinary Account")}</Button>
+            <Flex justifyContent='space-between' alignItems='center'>
+              <Box width="45%">
+                <Text color="rgb(0 150 212)" fontSize="38px" fontWeight="600">
+                  {t("Apply for Collaboration")}
+                </Text>
+                <Button padding="0 50px" mr="16px" mt="20px" disabled>
+                  {t("Staking")}
+                </Button>
+                <Button padding="0 50px" mr="16px" mt="20px" disabled>
+                  {t("Claim")}
+                </Button>
+              </Box>
+              <Box width="45%">
+                <Text fontSize="38px" fontWeight="600">
+                  {t("Role")}
+                </Text>
+                <Button mt="20px">{t("Ordinary Account")}</Button>
+              </Box>
+            </Flex>
           </BorderBox>
         </Box>
       </Flex>
