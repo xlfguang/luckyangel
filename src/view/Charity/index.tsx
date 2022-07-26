@@ -6,13 +6,15 @@ import {
   Box,
   Checkbox,
   Button,
+  Text,
+  Progress,
 } from "@pancakeswap/uikit";
 import { useTranslation } from "react-i18next";
 import Page from "src/Page";
 import styled from "styled-components";
 import { Title } from "../Swap/components/Title";
 const ImgBoxStyle = styled(Box)`
-  margin:0 10px;
+  margin: 0 10px;
   border: 2px solid #9da8d6;
   border-radius: 5px;
   width: 160px;
@@ -41,13 +43,15 @@ const ImgBox = ({
   src,
   text,
   vote,
+  percentage,
 }: {
   src: string;
   text: string;
   vote?: boolean;
+  percentage?: number;
 }) => {
   return (
-    <Box>
+    <Flex flexDirection="column" alignItems="center">
       <ImgBoxStyle>
         <img src={src} alt="" />
         <div>{text}</div>
@@ -57,7 +61,18 @@ const ImgBox = ({
           <Checkbox />
         </Box>
       )}
-    </Box>
+      {percentage && (
+        <Box width="90%" mt='10PX'>
+          <Flex width="100%" >
+            {" "}
+            <Box width="100%" mr="8px">
+              <Progress primaryStep={percentage} />{" "}
+            </Box>
+            <div style={{width:'20px'}}>%{percentage}</div>
+          </Flex>
+        </Box>
+      )}
+    </Flex>
   );
 };
 
@@ -78,22 +93,40 @@ const Charity = () => {
           <CardBody>
             <Flex flexWrap="wrap" justifyContent="space-between">
               <Box width="45%" m="10px 0" style={{ fontSize: "26px" }}>
-                {t("Charity Pool")}
+                {t("Charity Pool")}：
+                <Text ml="5px" display="inline-block" fontSize="18px">
+                  {123}
+                </Text>
               </Box>
               <Box width="45%" m="10px 0" style={{ fontSize: "26px" }}>
-                {t("Charity Activity Times")}
+                {t("Charity Activity Times")}：
+                <Text ml="5px" display="inline-block" fontSize="18px">
+                  {123}
+                </Text>
               </Box>
               <Box width="45%" m="10px 0" style={{ fontSize: "26px" }}>
-                {t("Charity fund used")}
+                {t("Charity fund used")}：
+                <Text ml="5px" display="inline-block" fontSize="18px">
+                  {123}
+                </Text>
               </Box>
               <Box width="45%" m="10px 0" style={{ fontSize: "26px" }}>
-                {t("Charity participants")}
+                {t("Charity participants")}：
+                <Text ml="5px" display="inline-block" fontSize="18px">
+                  {123}
+                </Text>
               </Box>
               <Box width="45%" m="10px 0" style={{ fontSize: "26px" }}>
-                {t("Your tokens")}
+                {t("Your tokens")}：
+                <Text ml="5px" display="inline-block" fontSize="18px">
+                  {123}
+                </Text>
               </Box>
               <Box width="45%" m="10px 0" style={{ fontSize: "26px" }}>
-                {t("Your Voting weight")}
+                {t("Your Voting weight")}：
+                <Text ml="5px" display="inline-block" fontSize="18px">
+                  {123}
+                </Text>
               </Box>
             </Flex>
           </CardBody>
@@ -108,21 +141,26 @@ const Charity = () => {
                 src={"/img/logo.png"}
                 text={"图片的文字"}
                 vote
+                percentage={25}
+              />
+
+              <ImgBox
+                src={"/img/logo.png"}
+                text={"图片的文字"}
+                vote
+                percentage={5}
               />
               <ImgBox
                 src={"/img/logo.png"}
                 text={"图片的文字"}
                 vote
+                percentage={55}
               />
               <ImgBox
                 src={"/img/logo.png"}
                 text={"图片的文字"}
                 vote
-              />
-              <ImgBox
-                src={"/img/logo.png"}
-                text={"图片的文字"}
-                vote
+                percentage={20}
               />
             </Flex>
             <Button>投票</Button>
@@ -134,38 +172,14 @@ const Charity = () => {
           <CardHeader>{t("Charity Activity History")}</CardHeader>
           <CardBody>
             <Flex width="100%" overflowX="scroll">
-              <ImgBox
-                src={"/img/logo.png"}
-                text={"图片的文字"}
-              />
-              <ImgBox
-                src={"/img/logo.png"}
-                text={"图片的文字"}
-              />
-              <ImgBox
-                src={"/img/logo.png"}
-                text={"图片的文字"}
-              />
-              <ImgBox
-                src={"/img/logo.png"}
-                text={"图片的文字"}
-              />
-              <ImgBox
-                src={"/img/logo.png"}
-                text={"图片的文字"}
-              />{" "}
-              <ImgBox
-                src={"/img/logo.png"}
-                text={"图片的文字"}
-              />{" "}
-              <ImgBox
-                src={"/img/logo.png"}
-                text={"图片的文字"}
-              />{" "}
-              <ImgBox
-                src={"/img/logo.png"}
-                text={"图片的文字"}
-              />
+              <ImgBox src={"/img/logo.png"} text={"图片的文字"} />
+              <ImgBox src={"/img/logo.png"} text={"图片的文字"} />
+              <ImgBox src={"/img/logo.png"} text={"图片的文字"} />
+              <ImgBox src={"/img/logo.png"} text={"图片的文字"} />
+              <ImgBox src={"/img/logo.png"} text={"图片的文字"} />{" "}
+              <ImgBox src={"/img/logo.png"} text={"图片的文字"} />{" "}
+              <ImgBox src={"/img/logo.png"} text={"图片的文字"} />{" "}
+              <ImgBox src={"/img/logo.png"} text={"图片的文字"} />
             </Flex>
           </CardBody>
         </Card>
