@@ -5,6 +5,7 @@ import { MainBackground, MainBackgroundCard } from "src/components/Card/Card";
 import Page from "src/Page";
 import styled from "styled-components";
 import { BorderBox } from "../Swap/components/BorderCard";
+import copy from "copy-to-clipboard";
 
 const CardBoxStyle = styled(Box)`
   margin: 20px 0;
@@ -32,7 +33,9 @@ const CardBox: React.FC<
 
 export default function Rewards() {
   const { t } = useTranslation();
-
+  const copyLink = () => {
+    copy("123");
+  };
   return (
     <Page>
       <Button padding="0 100px" mb="20px" variant="danger">
@@ -41,25 +44,13 @@ export default function Rewards() {
       <Flex width="70%" justifyContent="space-between">
         <Box width="100%">
           <BorderBox borderColor="rgb(0 150 212)">
-            <Flex justifyContent='space-between' alignItems='center'>
-              <Box width="45%">
-                <Text color="rgb(0 150 212)" fontSize="38px" fontWeight="600">
-                  {t("Apply for Collaboration")}
-                </Text>
-                <Button padding="0 50px" mr="16px" mt="20px" disabled>
-                  {t("Staking")}
-                </Button>
-                <Button padding="0 50px" mr="16px" mt="20px" disabled>
-                  {t("Claim")}
-                </Button>
-              </Box>
-              <Box width="45%">
-                <Text fontSize="38px" fontWeight="600">
-                  {t("Role")}
-                </Text>
-                <Button mt="20px">{t("Ordinary Account")}</Button>
-              </Box>
-            </Flex>
+            <Text fontSize="26PX">
+              {t("Invitation link")}:http://localhost:3000/rewards
+            </Text>
+            <Button onClick={() => copyLink}>
+              {t("Copy")}
+              {t("Invitation link")}
+            </Button>
           </BorderBox>
         </Box>
       </Flex>

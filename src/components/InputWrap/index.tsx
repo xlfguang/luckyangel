@@ -81,7 +81,6 @@ export const InputWrap = ({
   readOnly: boolean;
   text: string;
   defaultVal: string | null;
-
   btnClick?: () => void;
 
 }) => {
