@@ -88,14 +88,14 @@
     "Back Liquidity": "流通",
     "Next Rebase:": "下次重置：",
     "Total Supply": "总量",
-    "Pool Value": "池值",
+    "Pool Value": "池子大小",
     "Total $USDT dividends":"$USDT分红",
-    "Lottery Pool":"抽奖池",
-    "Total lottery drawn":"总抽奖数",
-    "Draw times":"抽奖次数",
-    "Total number of winners":"总中奖数",
+    "Lottery Pool":"奖金池",
+    "Total lottery drawn":"累计已开奖金额",
+    "Draw times":"开奖次数",
+    "Total number of winners":"总中奖人次",
     "Charity Pool":"慈善池",
-    "Charity fund used":"慈善基金使用",
+    "Charity fund used":"已使用慈善基金",
     "Market Value of Treasury Asset": "库存资产的市场价值",
     "Medal of Lucky Angel NFT Dividend": "Lucky Angel使NFT分红奖章",
     "Lottery": "彩票",
@@ -200,7 +200,8 @@
     "Copy":"复制",
     "First prize number":"一等奖号码",
     "Second prize number":"二等奖号码",
-    "Third prize number":"三等奖号码"
+    "Third prize number":"三等奖号码",
+    "Reward users with a sustainable lottery model and dividends to make holders more determined to hold":"以可持续的彩票模式和分红奖励用户，让持有者更有决心持有"
 
     
 
