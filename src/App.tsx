@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./App.css";
 import { useTranslation } from "react-i18next";
 import { ThemeProvider } from "styled-components";
@@ -13,10 +13,10 @@ import Ido from "./view/Ido";
 // import Account from "./view/Account";
 // import Calculator from "./view/Calculator";
 import Charity from "./view/Charity";
-import MyContextWrapper from "./components/Content/Content";
+import MyContextWrapper, { MyContext } from "./components/Content/Content";
 import Load from "./components/Load";
 function App() {
-  
+ 
 
   return (
     <div className="App">
@@ -35,7 +35,7 @@ function App() {
                 {/* <Route path="/calculator" element={<Calculator></Calculator>} /> */}
                 <Route path="/charity" element={<Charity></Charity>} />
               </Routes>
-              <Load show={false}></Load>
+              <Load></Load>
             </Menu>
           </ThemeProvider>
         </BrowserRouter>

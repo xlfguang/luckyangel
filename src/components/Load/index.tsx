@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import styled from "styled-components";
-import "./load.css"
+import { MyContext } from "../Content/Content";
+import "./load.css";
 
 const LoadStyle = styled.div`
   position: fixed;
@@ -13,21 +15,19 @@ const LoadStyle = styled.div`
   align-items: center;
 `;
 
-const Pop = ({
-  show,
-}: {
-  show: boolean;
-}) => {
+const Pop = ({}: {}) => {
+  const { state } = useContext(MyContext) as any;
+  const { load } = state;
   return (
     <div>
-      {show ? (
+      {load ? (
         <LoadStyle>
           <div
             style={{
               height: "128px",
               width: "128px",
               background: `url('/img/load.png') 100% no-repeat`,
-              animation: "load 2s infinite linear"
+              animation: "load 2s infinite linear",
             }}
           ></div>
         </LoadStyle>

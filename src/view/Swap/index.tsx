@@ -32,7 +32,7 @@ export default function Swap() {
   const { t } = useTranslation();
   // 在这引入全局变量
   const { state, dispatch } = useContext(MyContext) as any;
-  const {invitationLink} = state
+  const { invitationLink } = state;
   // 生命周期中使用dispatch 修改全局变量 如果有邀请链接就会保存
   useEffect(() => {
     if (window.location.hash) {
@@ -43,9 +43,15 @@ export default function Swap() {
     }
   }, []);
   // 这里只是为了展示 因为dispatch 有异步延迟 在上一个函数中是log不出来的 但是在别的页面不受影响
-  useEffect(()=>{
-    console.log(invitationLink)
-  },[invitationLink])
+  useEffect(() => {
+    console.log(invitationLink);
+    // setTimeout(() => {
+    //   dispatch({
+    //     type: "UPDATE_LOAD",
+    //     payload: true,
+    //   });
+    // }, 5000);
+  }, [invitationLink]);
   return (
     <Page>
       <Title>{t("Lucky Angel")}</Title>

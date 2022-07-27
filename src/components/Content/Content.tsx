@@ -3,7 +3,8 @@ const initialState = {
   obj: {
     test:'111'
   },
-  invitationLink:''
+  invitationLink:'',
+  load:false
 
 
 };
@@ -20,6 +21,11 @@ function reducer(state = initialState, action: any) {
       return {
         ...state,
         invitationLink: payload,
+      }
+    case "UPDATE_LOAD":
+      return {
+        ...state,
+        load: payload,
       }
     default:
       return state;
