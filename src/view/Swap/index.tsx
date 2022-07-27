@@ -97,6 +97,9 @@ export default function Swap() {
                 fontSize: "18px",
                 marginBottom: "15px",
                 color: "#000",
+                textAlign: "left",
+                letterSpacing: "2px",
+                lineHeight: "1.5",
               }}
             >
               {t(
@@ -115,13 +118,13 @@ export default function Swap() {
         </MainBackgroundCard>
       </div>
 
-      <Flex width="60%" flexDirection="column" alignItems="stretch">
+      <Flex width="80%" flexDirection="column" alignItems="stretch">
         <Box width="80%">
           <p
             style={{
               color: "rgb(88, 88, 88)",
-              letterSpacing: "-10px",
-              fontSize: "100px",
+              letterSpacing: "0px",
+              fontSize: "60px",
               textAlign: "left",
             }}
           >
@@ -129,14 +132,14 @@ export default function Swap() {
           </p>
           {/* <LineText text={t("The rights of Lucky Angel Holders")}></LineText> */}
         </Box>
-        <Flex flexDirection="column" alignItems="end">
-          <Title fs="42px" margin="10px 0" color="rgb(40 41 159)">
+        <Flex flexDirection="column" alignItems="stretch">
+          <Title ta="left" margin="10px 0" color="rgb(40 41 159)">
             {t("1.Dividend $USDT")}
           </Title>
-          <Title fs="60px" margin="10px 0" color="rgb(0 137 255)">
+          <Title ta="left" margin="10px 0" color="rgb(0 137 255)">
             {t("2.Participate in the lottery")}
           </Title>
-          <Title margin="10px 0" color="rgb(43 174 142)">
+          <Title ta="left" margin="10px 0" color="rgb(43 174 142)">
             {t("3.Vote for charity")}
           </Title>
         </Flex>
@@ -155,9 +158,11 @@ export default function Swap() {
         <MainBackgroundCard>
           <MainBackground>
             <Box padding="50px" width="400px">
-              {t(
-                "If you stake before the lottery draw, you will get a free lottery ticket. After the staking is over, you can withdraw your tokens without tax and wait for the result"
-              )}
+              <p style={{ letterSpacing: "2px", lineHeight: "1.5",textAlign:'left' }}>
+                {t(
+                  "If you stake before the lottery draw, you will get a free lottery ticket. After the staking is over, you can withdraw your tokens without tax and wait for the result"
+                )}
+              </p>
             </Box>
           </MainBackground>
         </MainBackgroundCard>
@@ -336,14 +341,13 @@ export default function Swap() {
         </Box>
       </Flex>
 
-      <Flex width="60%" flexDirection="column" alignItems="stretch">
+      <Flex width="80%" flexDirection="column" alignItems="stretch">
         <Box width="100%">
           <p
             style={{
               color: "#000",
-              letterSpacing: "-10px",
-              fontSize: "100px",
-              textAlign: "right",
+              fontSize: "60px",
+              textAlign: "left",
             }}
           >
             {t("Automatically distribute USDT for holding coins")}
@@ -354,13 +358,13 @@ export default function Swap() {
           <Title fs="42px" color="rgb(181 83 83)" margin="20px 0">
             {t("5% lottery pool")}
           </Title>
-          <Title color="#000" fs="66px" margin="20px 0">
+          <Title color="#000" fs="42px" margin="20px 0">
             {t("1% Marketing wallet")}
           </Title>
-          <Title color="rgb(0 57 255)" fs="36px" margin="20px 0">
+          <Title color="rgb(0 57 255)" fs="42px" margin="20px 0">
             {t("2% charitable wallet")}
           </Title>
-          <Title color="rgb(14 14 44 / 40%)" fs="52px" margin="20px 0">
+          <Title color="rgb(14 14 44 / 40%)" fs="42px" margin="20px 0">
             {t("2% dividend rewards.")}
           </Title>
         </Flex>

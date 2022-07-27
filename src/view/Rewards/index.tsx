@@ -38,9 +38,7 @@ export default function Rewards() {
   };
   return (
     <Page>
-      <Button padding="0 100px" mb="20px" variant="danger">
-        {t("Connect Wallet")}
-      </Button>
+    
       <Flex width="70%" justifyContent="space-between">
         <Box width="100%">
           <BorderBox borderColor="rgb(0 150 212)">
