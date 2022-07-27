@@ -75,16 +75,21 @@ export const InputWrap = ({
   readOnly = false,
   text,
   defaultVal = null,
-  btnClick
+  btnClick,
+  getValues
 }: {
   title?: string;
   readOnly: boolean;
   text: string;
   defaultVal: string | null;
   btnClick?: () => void;
-
+  getValues?:any
 }) => {
   const [inputValue, setInputValue] = useState(defaultVal || "");
+
+  const setValues = (e:any,fn:any)=>{
+      fn(e.target.value);
+  }
 
   return (
     <div style={{ width: "100%" }}>
@@ -95,6 +100,7 @@ export const InputWrap = ({
           type="text"
           readOnly={readOnly}
           value={inputValue}
+          onBlur = {(e)=>{setValues(e,getValues)}}
           onInput={(e) => setInputValue((e.target as any).value)}
         />
         <InputBtn onClick={btnClick}>{text}</InputBtn>

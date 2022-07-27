@@ -18,7 +18,7 @@ import { MyContext } from "src/components/Content/Content";
 import { BigNumber, Contract, ethers, Wallet, providers, utils } from 'ethers';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {TokenAdr,UsdtAdr,LuckIdoAdr} from 'src/view/token';
+import {TokenAdr,UsdtAdr,LuckIdoAdr,muticallAdr} from 'src/view/token';
 export const IdoProgressbar = styled(Box)`
   padding-right: 0;
   margin-right: 0;
@@ -223,20 +223,17 @@ export default function Ido() {
   setPercentage(amountU.div(BigNumber.from(10).pow(16)).toNumber()/500000);
   setPoolUsdtAmount(amountU.div(BigNumber.from(10).pow(18)).toString());
   if(privateAddress){
-    var amountU1 = await contracts["USDT"].balanceOf(privateAddress);
-    
-    contracts["AG"] = new Contract(TokenAdr, erc20AbiPool, provider);
-    var amountU2 = await contracts["AG"].balanceOf(privateAddress);
-    var idoAbi = require("../abi/ido.json");
-    contracts["ido"] = new Contract(LuckIdoAdr, idoAbi, provider);
-    var amountU3 = await contracts["ido"].userIdoAmount(privateAddress);
-    setUserAGAmount(amountU2.div(BigNumber.from(10).pow(18)).toString());
-    setUserUsdtAmount(amountU1.div(BigNumber.from(10).pow(18)).toString());
-    setUserIdoUsdtAmount(amountU3.toString());
+    var mutiAbi = require("../abi/muticall.json");
+    contracts["muticall"] = new Contract(muticallAdr, mutiAbi, provider);
+    var list1 = await contracts["muticall"].getUserInfoIdo(privateAddress);
+
+    setUserAGAmount(list1[0].div(BigNumber.from(10).pow(18)).toString());
+    setUserUsdtAmount(list1[1].div(BigNumber.from(10).pow(18)).toString());
+    setUserIdoUsdtAmount(list1[2].toString());
   }
 
   })()
-  },[])
+  },[privateAddress])
 
   const approve = async() =>{
     if(!privateAddress){

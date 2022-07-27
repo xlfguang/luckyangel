@@ -170,9 +170,9 @@
     "pledge":"质押",
     "Number of pledged tokens":"质押代币数量",
     "Fill in the lottery":"填写奖券",
-    "1st Price":"第一价格",
-    "2nd Price":"第二价格",
-    "3rd Price":"第三价格",
+    "1st PoolValue":"第一奖池",
+    "2nd PoolValue":"第二奖池",
+    "3rd PoolValue":"第三奖池",
     "Total lottery tickets":"总奖券数量",
     "My lottery tickets":"我的奖券",
     "Times I participated":"参与次数",
@@ -185,8 +185,8 @@
     "Approve":"授权",
     "Stake":"质押",
     "Withdraw":"提取",
-    "Claim Your Tickets":"领取奖券",
-    "Fill in your tickets":"填写奖券",
+    "Claim Tickets":"领取奖券",
+    "Fill tickets":"填写奖券",
     "My lucky numbers":"我的幸运数字",
     "Vote for the charity activity you prefer":"投票您喜欢的慈善活动",
     "Charity Activity Times":"慈善活动次数",
@@ -197,7 +197,10 @@
     "the result of Vote":"投票结果",
     "Charity Activity History":"慈善活动历史",
     "Invitation link":"邀请链接",
-    "Copy":"复制"
+    "Copy":"复制",
+    "First prize number":"一等奖号码",
+    "Second prize number":"二等奖号码",
+    "Third prize number":"三等奖号码"
 
     
 

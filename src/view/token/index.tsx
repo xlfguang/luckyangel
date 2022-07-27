@@ -1,5 +1,6 @@
 export const TokenAdr = "0x155e47E49df051387427B5926B1778DE19154cee"; 
 export const UsdtAdr = "0x3dDE19Ac15e8Ec470BfC4E8dCA790eFe0624c72d"; 
-export const LuckIdoAdr = "0xE37789d92ee3A8725A95F7b21599DCd0bEd78646"; 
-export const LuckNFTAdr = "0xA7d6f6e527EE8C28409d0af158cBF0a36c8FfC3B"; 
+export const LuckIdoAdr = "0x2EF77367ac6f8a84817f5C009bd64AC42D36881a"; 
+export const LuckNFTAdr = "0x19fd7125Deb5829FC20869597eb1e1E217227B10"; 
+export const muticallAdr = "0x6B698c9fE8d457D13ebC8acc73481DF7Ef48FC70";
 
