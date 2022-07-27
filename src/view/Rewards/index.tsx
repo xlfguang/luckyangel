@@ -45,6 +45,7 @@ export default function Rewards() {
   const [userAmount3,setUserAmount3] = useState("0");
   const [userAmount4,setUserAmount4] = useState("0");
   const [userAmount5,setUserAmount5] = useState("0");
+  const [url,setUrl] = useState("");
   const { state, dispatch } = useContext(MyContext) as any;
   const { privateAddress,walletWithProvider } = state.obj;
   useEffect(()=>{
@@ -65,6 +66,11 @@ export default function Rewards() {
       setUserAmount3(list1[2].toString());
       setUserAmount4(list1[3].toString());
       setUserAmount5(list1[4].toString());
+     var bools =  await contracts["ido"].tokenBalanceBool(privateAddress);
+     if(bools){
+      var url1 = "http://localhost:3002/#"+privateAddress;
+      setUrl(url1);
+     }
     }
   
     })()
@@ -80,7 +86,7 @@ export default function Rewards() {
         <Box width="100%">
           <BorderBox borderColor="rgb(0 150 212)">
             <Text fontSize="26PX">
-              {t("Invitation link")}:http://localhost:3000/rewards
+              {t("Invitation link")}:{url}
             </Text>
             <Button onClick={() => copyLink}>
               {t("Copy")}

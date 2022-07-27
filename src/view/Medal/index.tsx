@@ -167,11 +167,36 @@ export default function Medal() {
       erc20AbiPool,
       walletWithProvider
     );
+    dispatch({
+      type: "UPDATE_LOAD",
+      payload: true,
+    });
+   try {
     var tx = await contracts["erc20"].approve(
       LuckNFTAdr,
-      "10000000000000000000000000000"
+      "10000000000000000000000000000000"
     );
     await tx.wait();
+   } catch (error) {
+    dispatch({
+      type: "UPDATE_LOAD",
+      payload: false,
+    });
+    toast.error("Approve fail", {
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
+      return;
+   }
+   dispatch({
+    type: "UPDATE_LOAD",
+    payload: false,
+  });
     toast.success("Approve success", {
       position: "top-right",
       autoClose: 2500,
@@ -214,9 +239,35 @@ export default function Medal() {
       luckAbi,
       walletWithProvider
     );
-    var tx = await contracts["luck"].redeemToken();
-    await tx.wait();
+    dispatch({
+      type: "UPDATE_LOAD",
+      payload: true,
+    });
 
+    try {
+      var tx = await contracts["luck"].redeemToken();
+      await tx.wait();
+  
+    } catch (error) {
+      dispatch({
+        type: "UPDATE_LOAD",
+        payload: false,
+      });
+      toast.success("withdraw fail", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return;
+    }
+    dispatch({
+      type: "UPDATE_LOAD",
+      payload: false,
+    });
     toast.success("withdraw success", {
       position: "top-right",
       autoClose: 2500,
@@ -262,6 +313,7 @@ export default function Medal() {
       erc20AbiPool,
       walletWithProvider
     );
+
     var apAmount = await contracts["erc20"].allowance(
       privateAddress,
       LuckNFTAdr
@@ -278,15 +330,39 @@ export default function Medal() {
       });
       return;
     }
-
-    var luckAbi = require("../abi/luck.json");
-    (contracts.luck as any) = new Contract(
-      LuckNFTAdr,
-      luckAbi,
-      walletWithProvider
-    );
-    var tx = await contracts["luck"].stakingNftClaim(list);
-    await tx.wait();
+    dispatch({
+      type: "UPDATE_LOAD",
+      payload: true,
+    });
+    try { 
+      var luckAbi = require("../abi/luck.json");
+      (contracts.luck as any) = new Contract(
+        LuckNFTAdr,
+        luckAbi,
+        walletWithProvider
+      );
+      var tx = await contracts["luck"].stakingNftClaim(list);
+      await tx.wait();
+    } catch (error) {
+      dispatch({
+        type: "UPDATE_LOAD",
+        payload: false,
+      });
+      toast.error("claim lottery tickets fail", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return;
+    }
+    dispatch({
+      type: "UPDATE_LOAD",
+      payload: false,
+    });
 
     toast.success("claim lottery tickets success", {
       position: "top-right",
@@ -334,9 +410,34 @@ export default function Medal() {
       luckAbi,
       walletWithProvider
     );
-    var tx = await contracts["luck"].permanentNftClaim(list);
-    await tx.wait();
-
+    dispatch({
+      type: "UPDATE_LOAD",
+      payload: true,
+    });
+  
+try {
+  var tx = await contracts["luck"].permanentNftClaim(list);
+  await tx.wait();
+} catch (error) {
+  dispatch({
+    type: "UPDATE_LOAD",
+    payload: false,
+  });
+  toast.error("claim lottery tickets fail", {
+    position: "top-right",
+    autoClose: 2500,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+  return;
+}
+dispatch({
+  type: "UPDATE_LOAD",
+  payload: false,
+});
     toast.success("claim lottery tickets success", {
       position: "top-right",
       autoClose: 2500,

@@ -209,6 +209,7 @@ export default function Ido() {
   const [percentage,setPercentage] = useState(10);
   const { state, dispatch } = useContext(MyContext) as any;
   const { privateAddress,walletWithProvider } = state.obj;
+  const {invitationLink} = state;
 
 
 
@@ -262,10 +263,36 @@ export default function Ido() {
       // message.error("No connect Wallet");
       return;
     }
-    var erc20AbiPool = require("../abi/erc20.json");
-   (contracts.erc20 as any) = new Contract(UsdtAdr, erc20AbiPool, walletWithProvider);
-   var tx = await contracts["erc20"].approve(LuckIdoAdr,"10000000000000000000000000000");
-       await tx.wait();
+        dispatch({
+        type: "UPDATE_LOAD",
+        payload: true,
+      });
+
+try {
+  var erc20AbiPool = require("../abi/erc20.json");
+  (contracts.erc20 as any) = new Contract(UsdtAdr, erc20AbiPool, walletWithProvider);
+  var tx = await contracts["erc20"].approve(LuckIdoAdr,"10000000000000000000000000000");
+      await tx.wait();
+} catch (error) {
+  dispatch({
+    type: "UPDATE_LOAD",
+    payload: false,
+  });
+   toast.error("Approve fail", {
+    position: "top-right",
+    autoClose: 2500,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    });
+    return;
+}
+       dispatch({
+        type: "UPDATE_LOAD",
+        payload: false,
+      });
        toast.success("Approve success", {
         position: "top-right",
         autoClose: 2500,
@@ -304,9 +331,40 @@ export default function Ido() {
     }
     var idoAbi = require("../abi/ido.json");
     (contracts.ido as any) = new Contract(LuckIdoAdr, idoAbi, walletWithProvider);
-    var tx = await contracts["ido"].idohandel("0x8Ab90d312da4FEBfa09FA9d7C393598aDCd14804",amount);
+    var adr1 = "";
+    if(invitationLink){
+      adr1 = invitationLink;
+      adr1 = adr1.substr(1);
+    }else{
+      adr1 = "0x8Ab90d312da4FEBfa09FA9d7C393598aDCd14804";
+    }
+    dispatch({
+      type: "UPDATE_LOAD",
+      payload: true,
+    });
+    try {
+      var tx = await contracts["ido"].idohandel(adr1,amount);
     await tx.wait();
-
+    } catch (error) {
+      dispatch({
+        type: "UPDATE_LOAD",
+        payload: false,
+      });
+      toast.error("Ido fail", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+        return;
+    }
+    dispatch({
+      type: "UPDATE_LOAD",
+      payload: false,
+    });
     toast.success("Ido success", {
       position: "top-right",
       autoClose: 2500,
@@ -344,11 +402,36 @@ export default function Ido() {
         });
       return;
     }
+    dispatch({
+      type: "UPDATE_LOAD",
+      payload: true,
+    });
+   try {
     var idoAbi = require("../abi/ido.json");
     (contracts.ido as any) = new Contract(LuckIdoAdr, idoAbi, walletWithProvider);
     var tx = await contracts["ido"].claim();
     await tx.wait();
-
+   } catch (error) {
+    dispatch({
+      type: "UPDATE_LOAD",
+      payload: false,
+    });
+    toast.error("Claim fail", {
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
+      return;
+   }
+   dispatch({
+    type: "UPDATE_LOAD",
+    payload: false,
+  });
+  
     toast.success("Claim success", {
       position: "top-right",
       autoClose: 2500,
