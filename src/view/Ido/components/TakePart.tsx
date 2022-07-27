@@ -194,7 +194,7 @@ const TakePart = () => {
               <Flex justifyContent="center" alignItems="center" flexDirection="column">
                 <PartStep bgType={3}>
                   <div className="step-title">{t('Commit The CONTRIBUTION')}</div>
-                  <div className="step-text"> {t('Max limit for Ordinary User is USDT100 and Collab User is USDT200')}</div>
+                  <div className="step-text"> {t('Anyone can ido, Min is USDT100 and Max is USDT200')}</div>
                 </PartStep>
               </Flex>
               <Flex justifyContent="center" alignItems="center" flexDirection="column" px={30}>
@@ -254,7 +254,7 @@ const TakePart = () => {
                 </PartStep>
                 <PartStep bgType={2} mt={10}>
                   <div className="step-title">{t('Commit The CONTRIBUTION')}</div>
-                  <div className="step-text"> {t('Max limit for Ordinary User is USDT100 and Collab User is USDT200')} </div>
+                  <div className="step-text"> {t('Anyone can ido, Min is USDT100 and Max is USDT200')} </div>
                 </PartStep>
                 <PartStep bgType={1} mt={10}>
                   <div className="step-title">{t('Claim Lucky Angel')}</div>

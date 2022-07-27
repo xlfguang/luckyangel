@@ -59,9 +59,9 @@ export default function Medal() {
   const [inputValue, setInputValue] = useState("");
   const [inputValue1, setInputValue1] = useState("");
   //lucknum
-  const [luckNum, setLuckNum] = useState("0");
-  const [luckNum1, setLuckNum1] = useState("0");
-  const [luckNum2, setLuckNum2] = useState("0");
+  const [luckNum, setLuckNum] = useState("0000");
+  const [luckNum1, setLuckNum1] = useState("0000");
+  const [luckNum2, setLuckNum2] = useState("00000");
   //poolvalue
   const [poolValue, setPoolValue] = useState("0");
   const [poolValue1, setPoolValue1] = useState("0");

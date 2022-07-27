@@ -141,7 +141,7 @@
     "Get USDT From CEX/DEX": "从CEX/DEX获得USDT",
     "You can exchange other currencies into USDT on centralized or decentralized exchanges.": "您可以在集中或分散的交易所将其他货币兑换成USDT.",
     "Commit The CONTRIBUTION": "提交贡献",
-    "Max limit for Ordinary User is USDT100 and Collab User is USDT200": "普通用户最大投资额度100 USDT，合伙人最大投资额度200 USDT",
+    "Anyone can ido, Min is USDT100 and Max is USDT200": "最小投资100U 最大500U 任何人都可以参与",
     "Claim Lucky Angel": "领取Lucky Angel",
     "After IDO, you can claim and transfer $Lucky Angel to your wallet.": "IDO结束后，您可以将Lucky Angel代币手动领取转移到您的钱包中",
     "Your Balance": "您的余额",
@@ -201,7 +201,8 @@
     "First prize number":"一等奖号码",
     "Second prize number":"二等奖号码",
     "Third prize number":"三等奖号码",
-    "Reward users with a sustainable lottery model and dividends to make holders more determined to hold":"以可持续的彩票模式和分红奖励用户，让持有者更有决心持有"
+    "Reward users with a sustainable lottery model and dividends to make holders more determined to hold":"以可持续的彩票模式和分红奖励用户，让持有者更有决心持有",
+    "Connect Wallet":"链接钱包"
 
     
 

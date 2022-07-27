@@ -22,7 +22,7 @@ const MyDropdown = Dropdown as React.FC<
 export const Header = () => {
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language);
-  const [adr,setAdr] = useState("链接钱包");
+  const [adr,setAdr] = useState("");
   const { state, dispatch } = useContext(MyContext) as any;
   const { obj } = state;
   useEffect(() => {
@@ -31,6 +31,8 @@ export const Header = () => {
     } else {
       i18n.changeLanguage(locLang);
     }
+
+
   }, []);
   const setWallet = async() => {
    //引入web3
@@ -89,7 +91,7 @@ export const Header = () => {
         </Flex>
         <Flex alignItems="center">
           <Box mr="15px" onClick={() => setWallet()}>
-            {adr}
+            { adr?adr:t("Connect Wallet")}
           </Box>
           <MyDropdown target={<Text>{lang == "en" ? "English" : "中文"}</Text>}>
             <Text

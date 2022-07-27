@@ -453,7 +453,7 @@ try {
     <Page>
       <ToastContainer/>
       <Card>
-        <CardHeader>{t("Lucky Angel PLUS IDO")}</CardHeader>
+        <CardHeader>{t("Lucky Angel IDO")}</CardHeader>
         <CardBody>
           <div className="desc-image">
             <IdoMe>
