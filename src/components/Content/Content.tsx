@@ -3,6 +3,9 @@ const initialState = {
   obj: {
     test:'111'
   },
+  invitationLink:''
+
+
 };
 
 function reducer(state = initialState, action: any) {
@@ -13,7 +16,11 @@ function reducer(state = initialState, action: any) {
         ...state,
         obj: payload,
       };
-
+    case "UPDATE_INVITATION_LINK":
+      return {
+        ...state,
+        invitationLink: payload,
+      }
     default:
       return state;
   }

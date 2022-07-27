@@ -25,9 +25,27 @@ import styled from "styled-components";
 import { AccountCard } from "src/components/GridContainer";
 import { QADataRow } from "./components/QADataRow";
 import LineText from "./components/LineText";
+import { useContext, useEffect } from "react";
+import { MyContext } from "src/components/Content/Content";
 
 export default function Swap() {
   const { t } = useTranslation();
+  // 在这引入全局变量
+  const { state, dispatch } = useContext(MyContext) as any;
+  const {invitationLink} = state
+  // 生命周期中使用dispatch 修改全局变量 如果有邀请链接就会保存
+  useEffect(() => {
+    if (window.location.hash) {
+      dispatch({
+        type: "UPDATE_INVITATION_LINK",
+        payload: window.location.hash,
+      });
+    }
+  }, []);
+  // 这里只是为了展示 因为dispatch 有异步延迟 在上一个函数中是log不出来的 但是在别的页面不受影响
+  useEffect(()=>{
+    console.log(invitationLink)
+  },[invitationLink])
   return (
     <Page>
       <Title>{t("Lucky Angel")}</Title>
@@ -158,7 +176,13 @@ export default function Swap() {
         <MainBackgroundCard>
           <MainBackground>
             <Box padding="50px" width="400px">
-              <p style={{ letterSpacing: "2px", lineHeight: "1.5",textAlign:'left' }}>
+              <p
+                style={{
+                  letterSpacing: "2px",
+                  lineHeight: "1.5",
+                  textAlign: "left",
+                }}
+              >
                 {t(
                   "If you stake before the lottery draw, you will get a free lottery ticket. After the staking is over, you can withdraw your tokens without tax and wait for the result"
                 )}
