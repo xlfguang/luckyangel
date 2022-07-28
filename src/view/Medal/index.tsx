@@ -523,9 +523,12 @@ dispatch({
           {t("Hold tickets")} : {userTickets}
         </Text>
 
-        <Flex>
-          <Button mr="20px" onClick={()=>{approve()}}>{t("Approve")}</Button>
-          <Button onClick={()=>{withdraw()}}>{t("Withdraw")}</Button>
+        <Flex justifyContent='space-between'>
+          <Flex>
+            <Button mr="20px" onClick={()=>{approve()}}>{t("Approve")}</Button>
+            <Button onClick={()=>{withdraw()}}>{t("Withdraw")}</Button>
+          </Flex>
+          <Button >{t("Receive award")}</Button>
         </Flex>
         <Box mt="20px">
           <Flex justifyContent="space-between">
