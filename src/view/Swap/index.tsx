@@ -28,6 +28,16 @@ import LineText from "./components/LineText";
 import { useContext, useEffect } from "react";
 import { MyContext } from "src/components/Content/Content";
 
+const AutoPCandwep = styled(Flex)<{
+  pcw?: string;
+  wepw?: string;
+}>`
+  width: ${({ width }) => width ?? "80%"};
+  @media (min-width: 768px) {
+    width: ${({ pcw }) => pcw ?? "100%"};
+  }
+`;
+
 export default function Swap() {
   const { t } = useTranslation();
   // 在这引入全局变量
@@ -100,7 +110,6 @@ export default function Swap() {
               <Button scale="sm" startIcon={<ArrowForwardIcon />} mr="20px">
                 {t("Click Here to Buy Lucky Angel")}
               </Button>
-            
             </Flex>
           </Flex>
         </BorderBox>
@@ -171,15 +180,15 @@ export default function Swap() {
       <AutoFlex justifyContent="center">
         <MainBackgroundCard>
           <MainBackground>
-            <Box padding="50px" width="400px">
+            <AutoPCandwep padding="50px" pcw="400px" wepw="100%">
               {t("Invest 100 $Lucky Angel")}
-            </Box>
+            </AutoPCandwep>
           </MainBackground>
         </MainBackgroundCard>
         <ArrowForwardIcon height="50px" width="50px"></ArrowForwardIcon>
         <MainBackgroundCard>
           <MainBackground>
-            <Box padding="50px" width="400px">
+            <AutoPCandwep padding="50px" pcw="400px" wepw="100%">
               <p
                 style={{
                   letterSpacing: "2px",
@@ -191,7 +200,7 @@ export default function Swap() {
                   "If you stake before the lottery draw, you will get a free lottery ticket. After the staking is over, you can withdraw your tokens without tax and wait for the result"
                 )}
               </p>
-            </Box>
+            </AutoPCandwep>
           </MainBackground>
         </MainBackgroundCard>
       </AutoFlex>
@@ -400,10 +409,11 @@ export default function Swap() {
 
       <Title margin="40px 0">{t("FAQ's")}</Title>
 
-      <Flex
+      <AutoPCandwep
         flexDirection="column"
         alignItems="flex-start"
-        width="80%"
+        pcw="80%"
+        wepw="100%"
         background="#daf7ffc4"
         padding="20px"
         borderRadius="20px"
@@ -463,7 +473,7 @@ export default function Swap() {
             "Start earning USDT dividends simply by holding $ $Lucky Angel tokens in your wallet. These rewards are distributed to your wallet in the form of $USDT tokens, allowing you to easily start earning. And get a lottery ticket."
           )}
         />
-      </Flex>
+      </AutoPCandwep>
     </Page>
   );
 }

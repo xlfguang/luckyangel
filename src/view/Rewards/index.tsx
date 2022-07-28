@@ -20,6 +20,27 @@ const CardBoxStyle = styled(Box)`
   padding: 50px 0;
   @media (max-width: 1200px) {
     width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+  }
+`;
+
+const AutoPCandwep = styled(Box)<{
+  pcw?: string;
+  wepw?: string;
+}>`
+  width: ${(props) => (props.pcw ? props.pcw : "80%")}; 
+  @media (max-width: 768px) {
+    width: ${(props) => (props.wepw ? props.wepw : "100%")}; 
+  }
+`;
+const AutoPCandwepFlex = styled(Flex)<{
+  pcw?: string;
+  wepw?: string;
+}>`
+  width: ${(props) => (props.pcw ? props.pcw : "80%")}; 
+  @media (max-width: 768px) {
+    width: ${(props) => (props.wepw ? props.wepw : "100%")}; 
   }
 `;
 const CardBox: React.FC<
@@ -82,7 +103,7 @@ export default function Rewards() {
   return (
     <Page>
     
-      <Flex width="70%" justifyContent="space-between">
+      <AutoPCandwepFlex pcw="70%" justifyContent="space-between">
         <Box width="100%">
           <BorderBox borderColor="rgb(0 150 212)">
             <Text fontSize="26PX">
@@ -94,8 +115,8 @@ export default function Rewards() {
             </Button>
           </BorderBox>
         </Box>
-      </Flex>
-      <Box width="70%" mt="40px">
+      </AutoPCandwepFlex>
+      <AutoPCandwep pcw="70%" mt="40px">
         <Text textAlign="left" mb="30px" bold>
           {t(
             "Enjoy 10% $USDT rewards for IDO referrals. When the IDO referrals buying added to 1000 $USDT, you can get permanent NFT."
@@ -108,8 +129,8 @@ export default function Rewards() {
           )}
         </Text>
         
-      </Box>
-      <Box width="70%" mt="40px">
+      </AutoPCandwep>
+      <AutoPCandwep pcw="70%" mt="40px">
         <AutoFlex isWrap justifyContent="space-between">
           <CardBox topText={userAmount} bottomText={t("IDO Participants")} />
           <CardBox topText={userAmount1} bottomText={t("Referral Count")} />
@@ -118,7 +139,7 @@ export default function Rewards() {
           <CardBox topText={userAmount4} bottomText={t("团队IDO业绩")} />
           <CardBox topText={userAmount5} bottomText={t("团队人数")} />
         </AutoFlex>
-      </Box>
+      </AutoPCandwep>
     </Page>
   );
 }
