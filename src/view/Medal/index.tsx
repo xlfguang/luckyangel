@@ -61,7 +61,7 @@ export default function Medal() {
   //lucknum
   const [luckNum, setLuckNum] = useState("0000");
   const [luckNum1, setLuckNum1] = useState("0000");
-  const [luckNum2, setLuckNum2] = useState("00000");
+  const [luckNum2, setLuckNum2] = useState("0000");
   //poolvalue
   const [poolValue, setPoolValue] = useState("0");
   const [poolValue1, setPoolValue1] = useState("0");
@@ -279,6 +279,79 @@ export default function Medal() {
     });
     return;
   };
+
+  const claimReward = async () => {
+    if (!privateAddress) {
+      toast.error("No connect Wallet", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return;
+    }
+    if (!walletWithProvider) {
+      toast.error("No connect Wallet", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return;
+    }
+    var luckAbi = require("../abi/luck.json");
+    (contracts.luck as any) = new Contract(
+      LuckNFTAdr,
+      luckAbi,
+      walletWithProvider
+    );
+    dispatch({
+      type: "UPDATE_LOAD",
+      payload: true,
+    });
+
+    try {
+      var tx = await contracts["luck"].receiveRewards();
+      await tx.wait();
+  
+    } catch (error) {
+      dispatch({
+        type: "UPDATE_LOAD",
+        payload: false,
+      });
+      toast.success("claimReward fail", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return;
+    }
+    dispatch({
+      type: "UPDATE_LOAD",
+      payload: false,
+    });
+    toast.success("claimReward success", {
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+    return;
+  };
+
 
   const staking = async () => {
     if (!privateAddress) {
@@ -528,7 +601,7 @@ dispatch({
             <Button mr="20px" onClick={()=>{approve()}}>{t("Approve")}</Button>
             <Button onClick={()=>{withdraw()}}>{t("Withdraw")}</Button>
           </Flex>
-          <Button >{t("Receive award")}</Button>
+          <Button style={{background:"#D41F1F"}} onClick={()=>{claimReward()}}>{t("Receive award")}</Button>
         </Flex>
         <Box mt="20px">
           <Flex justifyContent="space-between">
