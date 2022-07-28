@@ -461,19 +461,19 @@ dispatch({
       <ToastContainer />
       <Box width="70%" mt="40px">
         <Flex alignItems="center" justifyContent="space-between" mb="30px">
-          <Text fontSize="80px" bold>
+          <Text fontSize="40px" bold>
             {t("First prize number")}
           </Text>
           <NumberBox num={luckNum}></NumberBox>
         </Flex>
         <Flex alignItems="center" justifyContent="space-between" mb="30px">
-          <Text fontSize="80px" bold>
+          <Text fontSize="40px" bold>
             {t("Second prize number")}
           </Text>
           <NumberBox num={luckNum1}></NumberBox>
         </Flex>
         <Flex alignItems="center" justifyContent="space-between" mb="30px">
-          <Text fontSize="80px" bold>
+          <Text fontSize="40px" bold>
             {t("Third prize number")}
           </Text>
           <NumberBox num={luckNum2}></NumberBox>

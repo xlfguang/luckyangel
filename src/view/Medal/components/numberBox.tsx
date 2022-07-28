@@ -1,7 +1,7 @@
 import CountUp from "react-countup";
 const countUpStyle = {
   border: " 2px solid #0034b4",
-  fontSize: "72px",
+  fontSize: "28px",
   margin: "0 0 0 40px",
   borderRadius: "10px",
   padding: "20px",

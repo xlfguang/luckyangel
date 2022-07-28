@@ -98,27 +98,16 @@ export default function Rewards() {
       <Box width="70%" mt="40px">
         <Text textAlign="left" mb="30px" bold>
           {t(
-            "Stake 300USDT, applicable to collab with EAP-DAO, also enjoy the following benefits."
+            "Enjoy 10% $USDT rewards for IDO referrals. When the IDO referrals buying added to 1000 $USDT, you can get permanent NFT."
           )}
         </Text>
         <Text textAlign="left">
           .
           {t(
-            "Attain the role of Collab Project and enjoy 10% Lucky Angel reward for more IDO referrals."
+            "One permanent NFT is automatically awarded for each 1000U of accumulated purchases over a personal invitation link (For example, if accumulated purchases is $2300 , you will get 2 permanent NFTs ). Each NFT will receive a free ticket before each drawing. NFTS are refundable."
           )}
         </Text>
-        <Text textAlign="left">
-          .
-          {t(
-            "Invite at least 10 IDO participants, you have completed the task: 300USDT staked by you will be returned, also you are eligible for $EGGPLUS subscription allocation worth 200USDT. If the task is not done at the end of IDO, 300USDT will be put in good use for the community."
-          )}
-        </Text>
-        <Text textAlign="left">
-          .
-          {t(
-            "Present the Collab Medal NFT (transferable to others), and 5% of each sale transaction fee will become a dividend, which will be distributed to all holders of the NFT."
-          )}
-        </Text>
+        
       </Box>
       <Box width="70%" mt="40px">
         <AutoFlex isWrap justifyContent="space-between">

@@ -88,41 +88,41 @@ const Charity = () => {
   return (
     <Page>
       <Title>{t("Vote for the charity activity you prefer")}</Title>
-      <Box width="50%">
+      <Box width="70%">
         <Card mt="20px">
           <CardBody>
             <Flex flexWrap="wrap" justifyContent="space-between">
-              <Box width="45%" m="10px 0" style={{ fontSize: "26px" }}>
+              <Box width="45%" m="10px 0" style={{ fontSize: "22px" }}>
                 {t("Charity Pool")}：
                 <Text ml="5px" display="inline-block" fontSize="18px">
                   {123}
                 </Text>
               </Box>
-              <Box width="45%" m="10px 0" style={{ fontSize: "26px" }}>
+              <Box width="45%" m="10px 0" style={{ fontSize: "22px" }}>
                 {t("Charity Activity Times")}：
                 <Text ml="5px" display="inline-block" fontSize="18px">
                   {123}
                 </Text>
               </Box>
-              <Box width="45%" m="10px 0" style={{ fontSize: "26px" }}>
+              <Box width="45%" m="10px 0" style={{ fontSize: "22px" }}>
                 {t("Charity fund used")}：
                 <Text ml="5px" display="inline-block" fontSize="18px">
                   {123}
                 </Text>
               </Box>
-              <Box width="45%" m="10px 0" style={{ fontSize: "26px" }}>
+              <Box width="45%" m="10px 0" style={{ fontSize: "22px" }}>
                 {t("Charity participants")}：
                 <Text ml="5px" display="inline-block" fontSize="18px">
                   {123}
                 </Text>
               </Box>
-              <Box width="45%" m="10px 0" style={{ fontSize: "26px" }}>
+              <Box width="45%" m="10px 0" style={{ fontSize: "22px" }}>
                 {t("Your tokens")}：
                 <Text ml="5px" display="inline-block" fontSize="18px">
                   {123}
                 </Text>
               </Box>
-              <Box width="45%" m="10px 0" style={{ fontSize: "26px" }}>
+              <Box width="45%" m="10px 0" style={{ fontSize: "22px" }}>
                 {t("Your Voting weight")}：
                 <Text ml="5px" display="inline-block" fontSize="18px">
                   {123}

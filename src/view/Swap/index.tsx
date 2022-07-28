@@ -66,7 +66,7 @@ export default function Swap() {
         <BorderBox margin="0 20px 0 0">
           <Flex flexDirection={"column"} alignItems={"flex-start"}>
             <p style={{ fontSize: "32px", color: "#585858" }}>
-              {t("Charity Lottery Pledge and Dividend Protocol")}
+              {t("Lottery & Charity & Dividend Protocol")}
             </p>
             <br></br>
             <IconText>
@@ -100,9 +100,7 @@ export default function Swap() {
               <Button scale="sm" startIcon={<ArrowForwardIcon />} mr="20px">
                 {t("Click Here to Buy Lucky Angel")}
               </Button>
-              <Button color="#000" scale="sm" variant="success">
-                {t("Airdrop")}
-              </Button>
+            
             </Flex>
           </Flex>
         </BorderBox>
@@ -112,7 +110,7 @@ export default function Swap() {
             flexDirection={"column"}
             height="100%"
             alignItems={"flex-start"}
-            justifyContent="space-between"
+            justifyContent="center"
           >
             <p style={{ fontSize: "32px", color: "#fff" }}>{t("ABOUT")}</p>
             <br></br>
@@ -148,7 +146,7 @@ export default function Swap() {
             style={{
               color: "rgb(88, 88, 88)",
               letterSpacing: "0px",
-              fontSize: "60px",
+              fontSize: "48px",
               textAlign: "left",
             }}
           >
@@ -157,13 +155,13 @@ export default function Swap() {
           {/* <LineText text={t("The rights of Lucky Angel Holders")}></LineText> */}
         </Box>
         <Flex flexDirection="column" alignItems="stretch">
-          <Title ta="left" margin="10px 0" color="rgb(40 41 159)">
+          <Title fs="30px" ta="left" margin="10px 0" color="rgb(40 41 159)">
             {t("1.Dividend $USDT")}
           </Title>
-          <Title ta="left" margin="10px 0" color="rgb(0 137 255)">
+          <Title fs="30px" ta="left" margin="10px 0" color="rgb(0 137 255)">
             {t("2.Participate in the lottery")}
           </Title>
-          <Title ta="left" margin="10px 0" color="rgb(43 174 142)">
+          <Title fs="30px" ta="left" margin="10px 0" color="rgb(43 174 142)">
             {t("3.Vote for charity")}
           </Title>
         </Flex>
@@ -376,25 +374,25 @@ export default function Swap() {
           <p
             style={{
               color: "#000",
-              fontSize: "60px",
+              fontSize: "48px",
               textAlign: "left",
             }}
           >
-            {t("Automatically distribute USDT for holding coins")}
+            {t("Automatically distribute $USDT for holders")}
           </p>
           {/* <LineText text={t("The rights of Lucky Angel Holders")}></LineText> */}
         </Box>
         <Flex flexDirection="column" alignItems="baseline">
-          <Title fs="42px" color="rgb(181 83 83)" margin="20px 0">
+          <Title fs="30px" color="rgb(181 83 83)" margin="20px 0">
             {t("5% lottery pool")}
           </Title>
-          <Title color="#000" fs="42px" margin="20px 0">
+          <Title color="#000" fs="30px" margin="20px 0">
             {t("1% Marketing wallet")}
           </Title>
-          <Title color="rgb(0 57 255)" fs="42px" margin="20px 0">
+          <Title color="rgb(0 57 255)" fs="30px" margin="20px 0">
             {t("2% charitable wallet")}
           </Title>
-          <Title color="rgb(14 14 44 / 40%)" fs="42px" margin="20px 0">
+          <Title color="rgb(14 14 44 / 40%)" fs="30px" margin="20px 0">
             {t("2% dividend rewards.")}
           </Title>
         </Flex>
@@ -423,34 +421,34 @@ export default function Swap() {
           )}
         />
         <QADataRow
-          Q={t("What are Lucky Ange Tokens?")}
+          Q={t("What are $Lucky Angel Tokens?")}
           A={t(
-            "Lucky Ange is a decentralized financial asset that rewards users with a sustainable dividend lottery model by using its unique innovative mechanism. It makes staking easier and more efficient, and provides the highest cryptocurrency stability returns for Lucky Ange token holders"
+            "$Lucky Angel is a decentralized financial asset that rewards users with a sustainable dividend lottery model by using its unique innovative mechanism. It makes staking easier and more efficient, and provides the highest cryptocurrency stability returns for $Lucky Angel token holders"
           )}
         />
         <QADataRow
-          Q={t("What makes Lucky Ange different from other DeFi projects?")}
+          Q={t("What makes $Lucky Angel different from other DeFi projects?")}
           A={t(
-            "Lucky Ange, a new protocol designed to create a new decentralized model in the DeFi space. Holders will receive USDT income dividends, and can get free lottery draws to earn huge bonuses, this method provides immediate value to token holders, while also cultivating an interest in seeing the project flourish. Get involved in the community. Our goal is to use the community as a cohesive and focused unit to create wealth and strength for the community. This new concept in DeFi, we believe it will set a new industry standard. Lucky Ange is currently one of the hottest projects in the DeFi space."
+            "$Lucky Angel, a new protocol designed to create a new decentralized model in the DeFi space. Holders will receive USDT income dividends, and can get free lottery draws to earn huge bonuses, this method provides immediate value to token holders, while also cultivating an interest in seeing the project flourish. Get involved in the community. Our goal is to use the community as a cohesive and focused unit to create wealth and strength for the community. This new concept in DeFi, we believe it will set a new industry standard. $Lucky Angel is currently one of the hottest projects in the DeFi space."
           )}
         />
         <QADataRow
-          Q={t("Where to buy $Lucky Ange tokens?")}
+          Q={t("Where to buy $Lucky Angel tokens?")}
           A={t("Buy with Pancakeswap")}
         />
         <QADataRow
-          Q={t("How to buy $Lucky Ange tokens?")}
+          Q={t("How to buy $Lucky Angel tokens?")}
           A={`
         ${t("1. Go to the Pancakeswap Binance Smart Chain network.")}
         ${t(
           "2. Connect any compatible wallet (usually metamask / coinbase dex wallet / TP wallet/trustwallet)."
         )}
         ${t(
-          "3. In the top box, select the token you want to exchange with $Lucky Ange (usually BNB or USDT)"
+          "3. In the top box, select the token you want to exchange with $Lucky Angel (usually BNB or USDT)"
         )}
-        ${t("4. In the bottom box, paste the $Lucky Ange contract address.")}
+        ${t("4. In the bottom box, paste the $Lucky Angel contract address.")}
         ${t(
-          "5. Select the amount of $ Lucky Ange you want to buy, make sure you have enough BNB in your wallet to cover the GAS fee for the transaction."
+          "5. Select the amount of $ $Lucky Angel you want to buy, make sure you have enough BNB in your wallet to cover the GAS fee for the transaction."
         )}
         ${t("6. Click the settings icon and set the slippage to 11%-15%.")}
         ${t(
@@ -460,9 +458,9 @@ export default function Swap() {
         />
 
         <QADataRow
-          Q={t("What should I do after buying $Lucky Ange tokens?")}
+          Q={t("What should I do after buying $Lucky Angel tokens?")}
           A={t(
-            "Start earning USDT dividends simply by holding $ Lucky Ange tokens in your wallet. These rewards are distributed to your wallet in the form of $USDT tokens, allowing you to easily start earning. And get a lottery ticket."
+            "Start earning USDT dividends simply by holding $ $Lucky Angel tokens in your wallet. These rewards are distributed to your wallet in the form of $USDT tokens, allowing you to easily start earning. And get a lottery ticket."
           )}
         />
       </Flex>

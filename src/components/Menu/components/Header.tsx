@@ -90,7 +90,7 @@ export const Header = () => {
           ))}
         </Flex>
         <Flex alignItems="center">
-          <Box mr="15px" onClick={() => setWallet()}>
+          <Box border='1px solid #000' borderRadius='5px' padding='5px 10px'  mr="15px" onClick={() => setWallet()}>
             { adr?adr:t("Connect Wallet")}
           </Box>
           <MyDropdown target={<Text>{lang == "en" ? "English" : "中文"}</Text>}>

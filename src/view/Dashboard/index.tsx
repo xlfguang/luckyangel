@@ -21,7 +21,7 @@ export default function Dashboard() {
           padding="10px 0 0 0"
         >
           <Box width="48%">
-            <Text>{t("Lucky Ange price")}</Text>
+            <Text>{t("$Lucky Angel price")}</Text>
             <Text fontSize="32px" color="rgb(255 240 186)">
               $0.7623
             </Text>

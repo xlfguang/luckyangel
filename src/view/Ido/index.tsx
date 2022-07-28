@@ -539,10 +539,10 @@ try {
             </IdoInput>
 
             <Button margin="10px 0" width="50%" onClick={()=>approve()}>
-              {"授权"}
+              {t("Approve")}
             </Button>
             <Button margin="10px 0" width="50%" onClick={()=>ido()}>
-              {"认购"}
+              {t("Buy")}
             </Button>
 
             <Flex justifyContent="space-between" alignItems="center">
