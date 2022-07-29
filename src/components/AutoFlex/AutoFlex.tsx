@@ -9,6 +9,7 @@ export const AutoFlex = styled(Box)<{
   justifyContent?: string;
   isWrap?: boolean;
   alignItems?: string;
+  wepWidth?: string;
 }>`
   display: flex;
   width: ${({ width }) => width || "100%"};
@@ -20,5 +21,6 @@ export const AutoFlex = styled(Box)<{
   flex-wrap: ${({ isWrap }) => (isWrap ? "wrap" : "nowrap")};
   @media (max-width: 768px) {
     flex-direction: column;
+    width: ${({ wepWidth }) => wepWidth || "100%"};
   }
 `;
